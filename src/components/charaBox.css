@@ -1,0 +1,62 @@
+
+.charaList{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.charaList > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;  
+  user-select: none;
+}
+
+.charaList > li > a {
+  text-align: center;
+  font-size: 1em;
+  transition: .02s all;
+  width: 120px;
+  height: 140px;
+}
+
+
+.charaList p{
+  white-space: nowrap;
+}
+
+.charaList > li > a > img {
+  margin-top: 3px;
+  width: 120px;
+  height: 120px;
+  z-index: 1000;
+  border-radius: 100%;
+  object-fit: cover;
+  transition: .2s ease all;
+}
+
+
+.charaList > li a:active{
+  scale: .9;
+  transition: .03s ease-out all;
+}
+
+.charaList img:hover{
+  border-radius: 0;
+  transition: .1s  all;
+}
+
+
+.Hide{
+  display: none;
+  position: absolute;
+}
+
+.NoHide{
+  align-items: flex-start;
+}

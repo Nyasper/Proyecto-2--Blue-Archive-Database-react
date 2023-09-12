@@ -1,0 +1,263 @@
+:root {
+  background-color: #800303;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+#mainContainer{
+  min-height: 100vh;
+  height: min;
+}
+
+*{
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #011d38;
+}
+
+/* Light and Dark themes */
+
+.mainDark{
+  background-color: #011d38;
+}
+
+.mainLight{
+  background-color: #a8d5ff;
+}
+
+.dark{
+  color: white;
+}
+
+.light{
+  color: black;
+}
+
+.outlineDark{
+  outline: 2px solid white;
+  border-radius: 80px;
+}
+
+.outlineLight{
+  outline: 2px solid black;
+  border-radius: 80px;
+}
+
+
+
+/* Titles Styles */
+
+.title{
+  margin: 0 20px;
+  display: inline;
+  font-size: 3em;
+  padding: 5px 15px;
+  width: max-content;
+}
+
+#titleContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 35px;
+}
+
+/* SEARCH BAR */
+#searchBar{
+  padding: 5px 10px;
+  margin-left: 60px;
+  background-color: rgba(23, 23, 143, 0);
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 2em;
+}
+
+
+#searchBar::placeholder{
+  color: rgb(172, 172, 172);
+}
+
+/* Home Page */
+#homeContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:120px auto;
+  width: max-content;
+  padding: 10px;
+  font-size: 1.8em;
+}
+
+#homeImg{
+    border-radius: 20px;
+    outline: 2px solid white;
+    filter: drop-shadow(1px 1px 1px white);
+    animation: homeAnimation 2s infinite ease;
+    margin: 20px;
+    
+}
+
+@keyframes homeAnimation {
+  0%{filter: drop-shadow(1px 1px 1px white);}
+  50%{filter: drop-shadow(2px 2px 6px white);}
+}
+
+
+/* Loading Screen */
+#LoadingScreen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  user-select: none;
+  pointer-events: none;
+  font-size: 4em;
+  color: white;
+}
+
+#LoadingScreen > img {
+  border-radius: 100%;
+  outline: 2px solid white;
+  animation: loadingAnimation infinite 4s alternate-reverse ease-in-out;
+  transform: translate(-100px);
+}
+
+@keyframes loadingAnimation {
+ 50% {transform: translate(100px);scale: 1.2;} 
+ 100%{transform: translate(-100px);}
+ }
+
+
+/* Navbar  */
+
+#navBarContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#navBar{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 8vh;
+}
+
+
+#navBar  a,#themeSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+  height: 100%;
+  font-size: 1.2em;
+}
+
+
+#navBar a:hover{
+  background-color: #0d69c0;
+  cursor: pointer;
+  transition: .2s ease all;
+}
+
+
+#logoImg{
+  height: 80%;
+  width: auto;
+  transform: rotate(360deg);
+  padding: -100px;
+  border-radius: 60px;
+  outline: 2px solid white;
+}
+
+#logoImg:hover{
+  filter: drop-shadow(2px 2px 4px white);
+}
+#navBar i{
+  margin-left:5px;
+}
+
+
+.rangeInput{
+  width: 28px;
+  margin-right: 4px;
+}
+
+.icon{
+  width: 30px;
+  height: 30px;
+  padding: 1px;
+  font-size: 1.3em;
+  user-select: none;
+}
+
+/* Page 404 */
+
+#p404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 92vh;
+}
+
+#p404Container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 20px;
+  font-size: 4em;
+  user-select: none;
+  pointer-events: none;
+}
+#p404Container > h4{
+  margin-bottom: -40px;
+}
+
+#p404Container >img {
+  width: 400px;
+}
+
+
+/* Page About */
+
+#aboutContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 4%  auto;
+  width: 90%;
+}
+#aboutContainer > a{
+  text-align: center;
+  font-size: 1.6em;
+}
+
+#aboutContainer > div{
+  padding: 50px;
+  font-size: 1.4em;
+}
+
+#aboutContainer > div > h4{
+  font-size: 2em;
+  text-align: center;
+}

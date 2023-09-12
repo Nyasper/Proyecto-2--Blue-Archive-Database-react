@@ -1,0 +1,38 @@
+#selectSchool{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  min-height: 84vh;
+  min-width: 80vw;
+  user-select: none;
+}
+
+#selectSchool > li {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 0 10px;
+  border-radius: 100%;
+
+}
+
+#selectSchool img{
+  width: 200px;
+  height: auto;
+}
+
+#selectSchool img:hover {
+  filter: drop-shadow(white 0 0 12px );
+  scale: 1.4;
+  transition: .01s all;
+}
+
+#selectSchool img:active{
+  scale: 1;
+  transition: .03s ease-out all;
+}
