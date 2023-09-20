@@ -14,22 +14,22 @@ const themeInput = useRef(null)
     }
   }
   }
-
   return  (
-    <nav id='navBarContainer' className={props.themes} >
-      <ul id='navBar'className={props.themes} >
-        <li id='logo'><Link className={props.themes} to={'/'}><img src='/extras/Shiroko_Swimsuit_Icon.png' id='logoImg' /></Link></li>
+    <nav id={styles.navBarContainer} className={props.themes} >
+      <ul id={styles.navBar} className={props.themes} >
+        <li id={styles.logo}><Link className={props.themes} to={'/'}><img src='/extras/Shiroko_Swimsuit_Icon.png' id={styles.logoImg} /></Link></li>
         <li><Link className={props.themes} to={'/characters'}>All Characters</Link></li>
         <li><Link className={props.themes} to={'/selectSchool'}>Select School</Link></li>
         <li><Link className={props.themes} to={'/about'}>About</Link></li>
-        <li id='themeSection'>
-            <i className="uil uil-moon icon" />
-            <input type="range" min={0} max={1} name='theme' ref={themeInput} onLoad={defaulThemeValue()} onInput={props.themeInput} className='rangeInput' />
-            <i className="uil uil-sun icon" />
+        <li id={styles.themeSection}>
+            <i className={`uil uil-moon ${styles.icon}`} />
+            <input type="range" min={0} max={1} name='theme' ref={themeInput} onLoad={defaulThemeValue()} onInput={props.themeInput} id={styles.rangeInput} />
+            <i className={`uil uil-sun ${styles.icon}`} />
         </li>
         </ul>
     </nav>
   )
 }
-import { Link } from 'react-router-dom'
-import { useRef } from 'react'
+import { Link } from "react-router-dom"
+import { useRef } from "react"
+import styles from "../styles/navbar.module.css"

@@ -1,7 +1,7 @@
 export default function About(props){
   return (
-  <section className={props.theme === 'dark' ? `${props.theme} outlineDark` : `${props.theme} outlineLight`} id="aboutContainer" >
-  <a href="https://github.com/Nyasper/Proyecto-2--Blue-Archive-character-selection-react" className={props.theme} target="_blank" >
+  <section className={props.theme === 'dark' ? `${props.theme} outlineDark` : `${props.theme} outlineLight`} id={`${styles.aboutContainer}`} >
+  <a href="https://github.com/Nyasper/Proyecto-2--Blue-Archive-character-selection-react" className={`${props.theme} ${styles.a}`} target="_blank" >
   <img src="extras/Shiroko_Swimsuit_Sprite.webp" alt="Shiroko-pic" />
   GITHUB
   </a>
@@ -16,3 +16,4 @@ All characters shown in my app are related to the mobile game called "Blue Archi
   </section>
   )
 }
+import styles from "../styles/about.module.css"

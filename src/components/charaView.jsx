@@ -1,6 +1,6 @@
 export default function CharaView(props){
   const urlName = useParams().charaName
-  
+  console.log(urlName)
   //Fetch
   const { data } = useFetch(`http://localhost:3000/api/chara/${urlName}`)
 
@@ -37,10 +37,10 @@ export default function CharaView(props){
     return (
       <>
  {data? (
-   <div id="charaViewContainer" className={props.theme} > 
-              <div id='imgFullAndCharaTableContainer'>
-              <img src={`/media/${data[0].school}/${data[0].charaName}_full.png`} alt={`${data[0].charaName}`} id="fullImage"/>
-              <div id="infoTable">
+   <div id={styles.charaViewContainer} className={props.theme} > 
+              <div id={styles.imgFullAndCharaTableContainer}>
+              <img src={`/media/${data[0].school}/${data[0].charaName}_full.png`} alt={`${data[0].charaName}`} id={styles.fullImage}/>
+              <div id={styles.infoTable}>
               <h2>{data[0].charaName.replaceAll('_',' ')} </h2>
               <p><b>Name: </b><Link to={`/characters/category/name/${data[0].name}`}>{data[0].name}</Link></p>
               <p><b>Last Name: </b> {data[0].lastName}</p>
@@ -53,15 +53,14 @@ export default function CharaView(props){
               <p><b>Illustrator: </b><Link to={`/characters/category/illustrator/${data[0].illustrator}`}>{data[0].illustrator}</Link></p>
               <p><b>Voice: </b><Link to={`/characters/category/voice/${data[0].voice}`} >{data[0].voice}</Link>
               <audio ref={audioRef} onPlay={playingAudio} onEnded={playStopped} src={`/media/${data[0].school}/${data[0].charaName}.ogg`} />
-              <i className="uil uil-play mediaIcon" ref={playButtonRef} onClick={playAudio} />
-              <i className="uil uil-stop-circle mediaIcon" ref={stopButtonRef} onClick={stopPlay} hidden />
+              <i className={`uil uil-play ${styles.mediaIcon}`} ref={playButtonRef} onClick={playAudio} />
+              <i className={`uil uil-stop-circle ${styles.mediaIcon}`} ref={stopButtonRef} onClick={stopPlay} hidden />
               </p>
               <p><b>Role: </b><Link to={`/characters/category/role/${data[0].role}`}>{data[0].role.replace('_','/')}</Link></p>
               <p><b>Combat Class: </b><Link to={`/characters/category/combatClass/${data[0].combatClass}`}>{data[0].combatClass}</Link></p>
               <p><b>Weapon Type: </b><Link to={`/characters/category/weaponType/${data[0].weaponType}`}>{data[0].weaponType}</Link></p>
               <p><b>Release Date: </b>{data[0].releaseDate}</p>
-              <p><b>source: </b><a id="charaUrl" href={data[0].url} target="_blank">{data[0].url}</a></p>
-
+              <p><b>source: </b><a id={styles.charaUrl} href={data[0].url} target="_blank">{data[0].url}</a></p>
               </div>
               </div>
           </div>
@@ -71,9 +70,9 @@ export default function CharaView(props){
     </>
     )
     }
-import './charaView.css'
 import {  useParams } from "react-router-dom"
 import { useFetch  } from "../useFetch"
 import { useRef } from "react"
 import LoadingScreen from "./loadingScreen"
 import { Link } from "react-router-dom"
+import styles from "../styles/charaView.module.css"

@@ -1,0 +1,28 @@
+.title{
+  margin: 0 20px;
+  display: inline;
+  font-size: 3em;
+  padding: 5px 15px;
+  width: max-content;
+}
+
+.titleContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 35px;
+}
+
+.searchBar{
+  padding: 5px 10px;
+  margin-left: 60px;
+  background-color: rgba(23, 23, 143, 0);
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 2em;
+}
+
+.searchBar::placeholder{
+  color: rgb(172, 172, 172);
+}

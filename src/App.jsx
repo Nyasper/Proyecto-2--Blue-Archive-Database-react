@@ -112,6 +112,10 @@ return (
           path='/characters/category/weaponType/:categoryData'
           element={<CategoryView categoryName='weaponType' theme={theme} />}
           />
+          <Route //Category view
+          path='/characters/category/:categoryName/:categoryData/:charaName'
+          element={<CharaView theme={theme} />}
+          />
     </Routes>
     )}    
     </main>

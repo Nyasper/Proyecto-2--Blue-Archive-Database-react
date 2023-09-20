@@ -1,5 +1,4 @@
-
-.charaList{
+#charaList{
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -8,7 +7,7 @@
   flex-wrap: wrap;
 }
 
-.charaList > li {
+#charaList > li {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +16,7 @@
   user-select: none;
 }
 
-.charaList > li > a {
+#charaList > li > a {
   text-align: center;
   font-size: 1em;
   transition: .02s all;
@@ -26,11 +25,11 @@
 }
 
 
-.charaList p{
+#charaList p{
   white-space: nowrap;
 }
 
-.charaList > li > a > img {
+#charaList > li > a > img {
   margin-top: 3px;
   width: 120px;
   height: 120px;
@@ -41,22 +40,11 @@
 }
 
 
-.charaList > li a:active{
+#charaList > li a:active{
   scale: .9;
   transition: .03s ease-out all;
 }
 
-.charaList img:hover{
+#charaList img:hover{
   border-radius: 0;
-  transition: .1s  all;
-}
-
-
-.Hide{
-  display: none;
-  position: absolute;
-}
-
-.NoHide{
-  align-items: flex-start;
 }

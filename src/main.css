@@ -1,0 +1,57 @@
+:root {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+#mainContainer{
+  min-height: 100vh;
+  height: min;
+}
+
+*{
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #011d38;
+}
+
+/* Light and Dark themes */
+
+.mainDark{
+  background-color: #011d38;
+}
+
+.mainLight{
+  background-color: #a8d5ff;
+}
+
+.dark{
+  color: white;
+}
+
+.light{
+  color: black;
+}
+
+.outlineDark{
+  outline: 2px solid white;
+  border-radius: 80px;
+}
+
+.outlineLight{
+  outline: 2px solid black;
+  border-radius: 80px;
+}
+
+.Hide{
+  display: none;
+  position: absolute;
+}
+
+.NoHide{
+  align-items: flex-start;
+}

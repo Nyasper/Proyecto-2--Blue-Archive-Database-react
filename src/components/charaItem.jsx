@@ -1,4 +1,4 @@
-export default function CharaBox(props){
+export default function CharaItem(props){
    return(
     <Link to={props.url}  >
       <p className={props.theme} >{props.charaName}</p>
@@ -7,4 +7,3 @@ export default function CharaBox(props){
     )
 }
 import { Link } from "react-router-dom"
-import './charaBox.css'

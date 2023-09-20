@@ -6,9 +6,8 @@ export default function Allcharacters(props){
       if(charaListRef.current && searchRef.current && searchRef.current.value.length>2){
         for (let i=0; i<charaListRef.current.children.length;i++) {
           if(!charaListRef.current.children[i].children[0].textContent.toLowerCase().startsWith(searchRef.current.value.toLowerCase())){
-            charaListRef.current.children[i].classList.hidden=true
-            charaListRef.current.children[i].children[0].hidden=true
-            
+            charaListRef.current.children[i].classList.add('Hide')
+            charaListRef.current.children[i].children[0].classList.add('Hide')
           }
 
           else if(charaListRef.current.children[i].children[0].textContent.toLowerCase().startsWith(searchRef.current.value.toLowerCase())){
@@ -22,34 +21,18 @@ export default function Allcharacters(props){
               charaListRef.current.children[i].classList.remove('Hide')
               charaListRef.current.children[i].children[0].classList.remove('Hide')
             }
-    
         }
       }
     return (
-      <>
-        {data  ? (
           <section className={props.theme} >
             <div className="titleContainer">
             <Header title='All Characters' theme={props.theme} inputRef={searchRef} inputEvent={searching} />
             </div>
-            <ul className="charaList" ref={charaListRef} >
-              {data?.map((chara)=>(
-              <li key={chara._id} className={`charaCard ${chara.charaName}`} >
-                <CharaBox theme={props.theme} imgSrc={chara.charaName} charaName={chara.charaName.replaceAll('_',' ')} school={chara.school} url={chara.charaName} />
-              </li>))
-              }
-            </ul>
+          <CharaList data={data} theme={props.theme} charaListRef={charaListRef} />
           </section>
-          
-        ) : (
-          <LoadingScreen />
-        )
+          )
         }
-      </>
-    )
-    }
 import { useRef } from "react"
 import { useFetch } from "../useFetch"
-import CharaBox from "./charaBox"
-import LoadingScreen from "./loadingScreen"
+import CharaList from "./charaList"
 import Header from "./header"
