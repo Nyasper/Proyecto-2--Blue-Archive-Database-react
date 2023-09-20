@@ -1,18 +1,8 @@
 import {  Route ,Routes } from 'react-router-dom'
 import { useState } from 'react'
 
-//Components
-import LoadingScreen from './components/loadingScreen'
-import Navbar from './components/navbar'
-import AllCharacters from './components/allCharacters'
-import SelectSchool from './components/selectSchool'
-import SchoolView from './components/schoolView'
-import CharaView from './components/charaView'
-import Page404 from './components/page404'
-import Home from './components/homePage'
-import About from './components/about'
-import CategoryView from './components/categoryView'
-
+//Imports all Components
+import { LoadingScreen, Navbar, Home, AllCharacters, SelectSchool, SchoolView, CharaView, CategoryView, About, Page404 } from "./components/components"
 
 export default function App() {
  
