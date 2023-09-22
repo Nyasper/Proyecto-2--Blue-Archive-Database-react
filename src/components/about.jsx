@@ -1,6 +1,6 @@
 export default function About(props){
   return (
-  <section className={props.theme === 'dark' ? `${props.theme} outlineDark` : `${props.theme} outlineLight`} id={`${styles.aboutContainer}`} >
+  <div className={props.theme === 'dark' ? `${props.theme} outlineDark` : `${props.theme} outlineLight`} id={`${styles.aboutContainer}`} >
   <a href="https://github.com/Nyasper/Proyecto-2--Blue-Archive-character-selection-react" className={`${props.theme} ${styles.a}`} target="_blank" >
   <img src="extras/Shiroko_Swimsuit_Sprite.webp" alt="Shiroko-pic" />
   GITHUB
@@ -13,7 +13,7 @@ export default function About(props){
   <p>This represents my second full stack application. In this project, I chose to use React to develop the frontend and Express with MongoDB for the backend. The main functionality of the application is based on sending Fetch requests to my server's API, allowing information to be retrieved from MongoDB and presented efficiently in the user interface.
 All characters shown in my app are related to the mobile game called "Blue Archive". All information used in the application was obtained from the website "https://bluearchive.wiki/wiki/Characters". The main purpose of this data extraction is for educational and learning purposes.</p>
   </div>
-  </section>
+  </div>
   )
 }
 import styles from "../styles/about.module.css"

@@ -14,13 +14,28 @@ const themeInput = useRef(null)
     }
   }
   }
+const Links= [
+    {
+      name: "All Characters",
+      path: "/characters"
+    },
+    {
+      name:"Select School",
+      path:"/selectSchool"
+    },
+    {
+      name:"About",
+      path:"/about"
+    }
+]
+
   return  (
-    <nav id={styles.navBarContainer} className={props.themes} >
-      <ul id={styles.navBar} className={props.themes} >
+    <nav  className={props.themes} >
+      <ul id={styles.navBarContainer} className={props.themes} >
         <li id={styles.logo}><Link className={props.themes} to={'/'}><img src='/extras/Shiroko_Swimsuit_Icon.png' id={styles.logoImg} /></Link></li>
-        <li><Link className={props.themes} to={'/characters'}>All Characters</Link></li>
-        <li><Link className={props.themes} to={'/selectSchool'}>Select School</Link></li>
-        <li><Link className={props.themes} to={'/about'}>About</Link></li>
+        {Links.map(link=>(
+          <li><Link to={link.path} className={props.themes} >{link.name}</Link></li>
+        ))}
         <li id={styles.themeSection}>
             <i className={`uil uil-moon ${styles.icon}`} />
             <input type="range" min={0} max={1} name='theme' ref={themeInput} onLoad={defaulThemeValue()} onInput={props.themeInput} id={styles.rangeInput} />

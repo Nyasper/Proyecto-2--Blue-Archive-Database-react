@@ -1,20 +1,12 @@
 #navBarContainer{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-#navBar{
-  display: flex;
   align-items: stretch;
   justify-content: center;
-  height: 8vh;
+  height: 100%;
 }
 
 
-#navBar  a,#themeSection {
+#navBarContainer  a,#themeSection {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +16,7 @@
 }
 
 
-#navBar a:hover{
+#navBarContainer a:hover{
   background-color: #0d69c0;
   cursor: pointer;
   transition: .2s ease all;
@@ -43,7 +35,7 @@
 #logoImg:hover{
   filter: drop-shadow(2px 2px 4px white);
 }
-#navBar i{
+#navBarContainer i{
   margin-left:5px;
 }
 

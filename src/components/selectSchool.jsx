@@ -5,7 +5,7 @@ export default function SelectSchool(props){
   return (
     <>
     {data  ? (
-      <>
+      <div>
       <HeaderNoSearch title="Select a School" theme={props.theme} />
       <ul id={styles.selectSchool} className={props.theme} >
       {data?.map((school,index)=>(
@@ -16,7 +16,7 @@ export default function SelectSchool(props){
           </Link>
         </li>))}
       </ul>
-      </>
+      </div>
     ) : (
       <LoadingScreen />
     )

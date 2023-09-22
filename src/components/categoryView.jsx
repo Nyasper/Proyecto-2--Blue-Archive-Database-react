@@ -25,10 +25,10 @@ export default function categoryView(props){
       }
 
     return (
-            <section>
-              <Header title={`${props.categoryName.toUpperCase()}: ${categoryData.replace('_',' ')}`} inputRef={searchRef} inputEvent={searching} />
+            <div>
+              <Header title={`${props.categoryName.toUpperCase()}: ${categoryData.replace('_',' ')}`} inputRef={searchRef} inputEvent={searching} theme={props.theme} />
               <CharaList data={data} charaListRef={charaListRef} theme={props.theme}  />
-            </section>
+            </div>
             )
           }
 import { useFetch } from "../useFetch"

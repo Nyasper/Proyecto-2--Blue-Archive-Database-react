@@ -4,8 +4,15 @@
 
 
 #mainContainer{
-  min-height: 100vh;
-  height: min;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 8% 1fr;
+}
+
+body{
+background-color: #011d38;
+
 }
 
 *{
@@ -15,9 +22,6 @@
   margin: 0;
 }
 
-body{
-  background-color: #011d38;
-}
 
 /* Light and Dark themes */
 

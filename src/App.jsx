@@ -31,8 +31,8 @@ export default function App() {
 
   
 return (
-  <main className={theme === 'dark'? 'mainDark' : 'mainLight'} id='mainContainer' onLoad={loadingScreenF}>
-  <Navbar themes={theme} themeInput={switchTheme} />
+  <div className={theme === 'dark'? 'mainDark' : 'mainLight'} id='mainContainer' onLoad={loadingScreenF}>
+    <Navbar themes={theme} themeInput={switchTheme} />
       {loadingScreen ? (
         <LoadingScreen />
         ) : (
@@ -108,6 +108,6 @@ return (
           />
     </Routes>
     )}    
-    </main>
+    </div>
     )
 }
