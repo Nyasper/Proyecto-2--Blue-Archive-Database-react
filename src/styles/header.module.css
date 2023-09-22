@@ -4,9 +4,7 @@
 
 #titleContainer{
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   padding: 40px 80px;
 }
 

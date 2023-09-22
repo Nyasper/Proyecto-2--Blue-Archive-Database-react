@@ -20,8 +20,7 @@
   width: 120px;
   height: 140px;
 }
-
-
+  
 #charaList p{
   white-space: nowrap;
 }
@@ -35,7 +34,6 @@
   object-fit: cover;
   transition: .2s ease all;
 }
-
 
 #charaList > li a:active{
   scale: .9;
