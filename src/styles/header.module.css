@@ -2,10 +2,11 @@
   font-size: 3em;
 }
 
-#titleContainer{
+#headerContainer{
   display: flex;
   align-items: center;
-  padding: 40px 80px;
+  padding: 40px 10px;
+  margin-left: 10%;
 }
 
 .searchBar{
@@ -19,4 +20,18 @@
 
 .searchBar::placeholder{
   color: rgb(172, 172, 172);
+}
+
+
+@media (max-width: 768px) {
+
+  #headerContainer{
+    flex-flow: column wrap;
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .title{
+    margin-top: 40px;
+  }
 }

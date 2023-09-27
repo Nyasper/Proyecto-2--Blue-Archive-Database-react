@@ -60,3 +60,38 @@ background-color: #011d38;
 .NoHide{
   align-items: flex-start;
 }
+
+.gridRow1{
+  grid-row: 1/2;
+  grid-column: 1/-1;
+}
+.gridRow2{
+  grid-row: 2/-1;
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+
+
+  #mainContainer{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 1fr;
+    justify-items: center;
+  }
+
+  .outlineDark{
+    outline: none;
+    border-radius: 0;
+  }
+  
+  .outlineLight{
+    outline: none;
+    border-radius: 0;
+  }
+}

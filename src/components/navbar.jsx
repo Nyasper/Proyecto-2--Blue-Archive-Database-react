@@ -30,11 +30,11 @@ const Links= [
 ]
 
   return  (
-    <nav  className={props.themes} >
+    <nav  className={`${props.themes} gridRow1`} >
       <ul id={styles.navBarContainer} className={props.themes} >
         <li id={styles.logo}><Link className={props.themes} to={'/'}><img src='/extras/Shiroko_Swimsuit_Icon.png' id={styles.logoImg} /></Link></li>
         {Links.map(link=>(
-          <li><Link to={link.path} className={props.themes} >{link.name}</Link></li>
+          <li key={link.name}><Link to={link.path} className={props.themes} >{link.name}</Link></li>
         ))}
         <li id={styles.themeSection}>
             <i className={`uil uil-moon ${styles.icon}`} />

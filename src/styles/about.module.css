@@ -7,16 +7,37 @@
   margin: 4%  auto;
 }
 #aboutContainer > a{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-size: 1.6em;
+  padding: 5px;
+  justify-content: center;
 }
 
 #aboutContainer > div{
-  padding: 50px;
-  font-size: 1.4em;
+  padding: 20px;
+  font-size: 1.2em;
+  justify-self: center;
 }
 
 #aboutContainer > div > h4{
   font-size: 2em;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+
+
+  #aboutContainer{
+    width: 100%;
+    flex-flow: column-reverse wrap;
+    margin-top: 60px;
+  }
+
+  #aboutContainer > div{
+    width: 90%;
+    font-size: 1.2em;
+  }
+
 }

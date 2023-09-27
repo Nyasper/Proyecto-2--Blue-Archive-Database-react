@@ -8,7 +8,7 @@
 
 #homeContainer  h1,
 #homeContainer  p{
-  margin-top: -8%;
+  margin-top: -8vh;
 }
 
 .homeImg{
@@ -23,4 +23,19 @@
 @keyframes homeAnimation {
   0%{filter: drop-shadow(1px 1px 1px white);}
   50%{filter: drop-shadow(2px 2px 6px white);}
+}
+
+
+@media (max-width: 768px) {
+
+  #homeContainer{
+
+  }
+
+  #homeContainer  h1,
+  #homeContainer  p{
+    margin-top: 0px;
+  }  
+
+
 }

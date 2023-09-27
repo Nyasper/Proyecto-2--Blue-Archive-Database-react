@@ -38,7 +38,6 @@ export default function CharaView(props){
       <>
  {data? (
    <div id={styles.charaViewContainer} className={props.theme} > 
-              <div id={styles.imgFullAndCharaTableContainer}>
               <img src={`/media/${data[0].school}/${data[0].charaName}_full.png`} alt={`${data[0].charaName}`} id={styles.fullImage}/>
               <div id={styles.infoTable}>
               <h2>{data[0].charaName.replaceAll('_',' ')} </h2>
@@ -61,7 +60,6 @@ export default function CharaView(props){
               <p><b>Weapon Type: </b><Link to={`/characters/category/weaponType/${data[0].weaponType}`}>{data[0].weaponType}</Link></p>
               <p><b>Release Date: </b>{data[0].releaseDate}</p>
               <p><b>source: </b><a id={styles.charaUrl} href={data[0].url} target="_blank">{data[0].url}</a></p>
-              </div>
               </div>
           </div>
       ) : (

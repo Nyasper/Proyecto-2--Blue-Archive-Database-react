@@ -1,6 +1,7 @@
 #navBarContainer{
   display: flex;
   height: 100%;
+  min-width: max-content;
 }
 
 
@@ -23,9 +24,7 @@
 
 #logoImg{
   height: 80%;
-  width: auto;
   transform: rotate(360deg);
-  padding: -100px;
   border-radius: 60px;
   outline: 2px solid white;
 }
@@ -49,4 +48,30 @@
   padding: 1px;
   font-size: 1.3em;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+
+
+  #navBarContainer{
+    flex-direction: column;
+    min-width: max-content;
+    justify-content: space-around;
+    height: 100%;
+    min-width: max-content;
+    font-size: 1.5em;
+    margin: 30px auto;
+  }
+  #logoImg{
+    height: 150px;
+  }
+
+  #navBarContainer li {
+    padding: 5px 0;
+  }
+
+  #navBarContainer input{
+    width: 35px;
+  }
+
 }
