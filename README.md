@@ -18,3 +18,6 @@ SELECT SCHOOL:
 
 ABOUT:
 ![page-about](/Screenshots/page_about.png)
+
+MOBILE VIEW:
+![mobile-view](/Screenshots/mobile_view.png)
