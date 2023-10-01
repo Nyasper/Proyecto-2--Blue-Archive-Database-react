@@ -6,7 +6,7 @@ export default function SelectSchool(props){
     <>
     {data  ? (
       <div>
-      <HeaderNoSearch title="Select a School" theme={props.theme} />
+      <HeaderNoSearch title="Select a School" theme={`${props.theme} gridRow2`} />
       <ul id={styles.selectSchool} className={props.theme} >
       {data?.map((school,index)=>(
         <li key={index}>
