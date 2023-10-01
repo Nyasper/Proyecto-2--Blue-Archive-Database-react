@@ -8,15 +8,19 @@ Todos los personajes que se muestran en mi aplicación están relacionados con e
 # PAGES SCREENSHOTS
 
 THEME LIGHT AND DARK:
+
 ![theme-selector](/Screenshots/theme_light_dark.png)
 
 ALL CHARACTERS:
+
 ![page-all-characters](/Screenshots/page_All_Characters.png)
 
 SELECT SCHOOL:
+
 ![page-select-school](/Screenshots/page_Select_School.png)
 
 ABOUT:
+
 ![page-about](/Screenshots/page_about.png)
 
 MOBILE VIEW:
