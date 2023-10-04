@@ -1,13 +1,9 @@
 {
-  "version": 2,
-  "devCommand": "run dev",
-  "framework": null,
     "builds": [
-      { "src": "*.js", "use": "@vercel/node" }
+      { "src": "server.js", "use": "@vercel/node" }
     ]
   ,
   "routes": [
     { "src": "/(.*)", "dest": "/" }
-  ] ,
-  "installCommand": "npm install"
+  ]
 }
