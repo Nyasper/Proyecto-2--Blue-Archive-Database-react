@@ -1,7 +1,7 @@
 {
   "version": 2,
   "devCommand": "run dev",
-  "framework": "other",
+  "framework": null,
     "builds": [
       { "src": "*.js", "use": "@vercel/node" }
     ]
