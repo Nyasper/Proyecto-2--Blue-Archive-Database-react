@@ -8,6 +8,13 @@ import router from "./routes.js";
 
 app.use(cors())
 
+
+app.use(Express.static(path.join(__dirname, 'client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 app.get('/',(req,res)=>{
   res.send('Proyecto 2 Backend.')
 })
