@@ -1,5 +1,5 @@
 export default function SelectSchool(props){
-  const { data } = useFetch('http://localhost:3000/api/schools')
+  const { data } = useFetch('schools')
   const searchBarRef = useRef()
   if (searchBarRef.current) searchBarRef.current.hidden=true
   return (

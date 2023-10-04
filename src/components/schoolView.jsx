@@ -1,6 +1,6 @@
 export default function SchoolView(props){
     const {schoolName} = useParams()
-    const { data } = useFetch(`http://localhost:3000/api/schools/${schoolName}`)
+    const { data } = useFetch(`schools/${schoolName}`)
     const searchRef = useRef()
     const charaListRef = useRef()
     const searching = ()=> {

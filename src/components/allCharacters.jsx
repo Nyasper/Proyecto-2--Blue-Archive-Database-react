@@ -1,5 +1,5 @@
 export default function Allcharacters(props){
-    const { data } = useFetch('http://localhost:3000/api/chara')
+    const { data } = useFetch('chara')
     const searchRef = useRef()
     const charaListRef = useRef()
     const searching = ()=> {

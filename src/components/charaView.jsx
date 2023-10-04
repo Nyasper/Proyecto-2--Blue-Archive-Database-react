@@ -2,7 +2,7 @@ export default function CharaView(props){
   const urlName = useParams().charaName
   console.log(urlName)
   //Fetch
-  const { data } = useFetch(`http://localhost:3000/api/chara/${urlName}`)
+  const { data } = useFetch(`chara/${urlName}`)
 
   //Audio Play
 
