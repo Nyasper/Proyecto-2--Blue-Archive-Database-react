@@ -9,7 +9,7 @@ export function useFetch(url) {
 
   async function searchData() {
     try {
-      const response = await fetch(`http://localhost:3000/api/${url}`);
+      const response = await fetch(`https://proyecto-2-backend.vercel.app/api/${url}`);
       const data = await response.json();
       setData(data);
     } catch (error) {
