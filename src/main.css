@@ -77,12 +77,12 @@ background-color: #011d38;
 
   
 
-  #mainContainer{
+  /* #mainContainer{
     min-width: min-content;
     display: grid;
     grid-template-columns: 100vh;
     grid-template-rows: max-content 1fr;
-  }
+  } */
 
   .outlineDark{
     outline: none;
