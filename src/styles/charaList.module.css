@@ -27,6 +27,7 @@
 }
 
 #charaList > li > a > img {
+  position: relative;
   margin-top: 3px;
   width: 120px;
   height: 120px;
@@ -48,10 +49,12 @@
 
 @media (max-width: 768px) {
 
+ 
   #charaList{
-    width: 100%;
-    margin-left: -40px;
-    min-width: min-content;
+    position: relative;
+    left: -10px;
+    min-width: 100%;
+
   }
 
   #charaList > li{
@@ -61,7 +64,8 @@
   #charaList > li > a{
     width: 160px;
     height: 180px;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    
   }
 
   #charaList > li > a > img {
