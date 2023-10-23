@@ -5,7 +5,8 @@
 
 #mainContainer{
   display: grid;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   grid-template-columns: 100%;
   grid-template-rows: 8vh 1fr;
   justify-items: center;
@@ -78,10 +79,10 @@ background-color: #011d38;
   
 
   #mainContainer{
+    min-width: min-content;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 40% 1fr;
-    justify-items: center;
+    grid-template-rows: max-content 1fr;
   }
 
   .outlineDark{

@@ -48,4 +48,10 @@
     min-width: min-content;
   }
 
+  #selectSchool img:hover {
+    filter: none;
+    scale: 1;
+    transition: none;
+  }
+
 }

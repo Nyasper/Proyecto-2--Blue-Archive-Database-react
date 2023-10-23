@@ -30,7 +30,7 @@ const Links= [
 ]
 
   return  (
-    <nav  className={`${props.themes} gridRow1`} >
+    <nav  className={`${props.themes}`} >
       <ul id={styles.navBarContainer} className={props.themes} >
         <li id={styles.logo}><Link className={props.themes} to={'/'}><img src='/extras/Shiroko_Swimsuit_Icon.png' id={styles.logoImg} /></Link></li>
         {Links.map(link=>(

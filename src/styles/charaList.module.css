@@ -48,9 +48,8 @@
  
   #charaList{
     position: relative;
-    left: -10px;
+    left: -9px;
     min-width: 100%;
-
   }
 
   #charaList > li{
