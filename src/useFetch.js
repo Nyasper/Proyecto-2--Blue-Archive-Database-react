@@ -12,7 +12,7 @@ export function useFetch(url) {
   
   async function searchData() {
     try {
-      const response = await fetch(`${local}/api/${url}`);
+      const response = await fetch(`${cloud}/api/${url}`);
       const data = await response.json();
       setData(data);
     } catch (error) {
@@ -22,37 +22,3 @@ export function useFetch(url) {
 
   return { data };
 }
-
-// export function fetchYande(character) {
-
-// const [data, setData] = useState(null);
-
-//   useEffect(() => {
-//     searchData();
-//   }, []);
-
-// async function searchYande
-//   const response = await fetch(
-//     `https://yande.re/post.json?tags=blue_archive+rating%3As+${character}`
-//   );
-//   const data = await response.json();
-//   return data;
-// }
-
-/*
-mismo ejemplo pero con .then()
-
-import { useState, useEffect } from "react";
-
-export function useFetch(url){
-  const [data, setData] = useState(null);
-
-    useEffect( () =>{
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => setData(data))
-    }, [])
-    return { data }
-};
-
-*/
