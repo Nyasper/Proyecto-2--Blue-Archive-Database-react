@@ -14,7 +14,6 @@
 
 body{
 background-color: #011d38;
-
 }
 
 *{
@@ -81,7 +80,7 @@ background-color: #011d38;
   #mainContainer{
     min-width: min-content;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 100vh;
     grid-template-rows: max-content 1fr;
   }
 

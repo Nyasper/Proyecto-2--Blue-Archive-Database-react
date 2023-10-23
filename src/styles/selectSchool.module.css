@@ -41,11 +41,14 @@
 @media (max-width: 768px) {
 
   #selectSchool{
+    position: relative;
+    width: 100%;
+    left: -12px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     padding: 0;
-    min-width: min-content;
+    /* min-width: min-content; */
   }
 
   #selectSchool img:hover {

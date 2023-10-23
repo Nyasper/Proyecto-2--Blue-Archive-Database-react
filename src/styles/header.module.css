@@ -29,9 +29,11 @@
 @media (max-width: 768px) {
 
   #headerContainer{
+    width: 100vw;
     flex-flow: column wrap;
     padding: 0;
     margin: 10px auto;
+    background-color: rgb(59, 21, 21);
   }
 
   .title{
