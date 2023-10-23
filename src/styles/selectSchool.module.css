@@ -37,3 +37,15 @@
   scale: 1;
   transition: .03s ease-out all;
 }
+
+@media (max-width: 768px) {
+
+  #selectSchool{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    padding: 0;
+    min-width: min-content;
+  }
+
+}

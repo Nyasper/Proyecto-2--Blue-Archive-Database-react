@@ -33,11 +33,15 @@
     width: 100%;
     flex-flow: column-reverse wrap;
     margin-top: 60px;
+    position: relative;
+    left: -15px;
+    text-align: center;
   }
 
   #aboutContainer > div{
-    width: 90%;
+    min-width: min-content;
     font-size: 1.2em;
+    margin: 0 auto;
   }
 
 }

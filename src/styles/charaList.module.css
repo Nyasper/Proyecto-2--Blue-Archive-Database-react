@@ -37,10 +37,6 @@
   transition: .2s ease all;
 }
 
-#charaList > li a:active{
-  scale: .9;
-  transition: .03s ease-out all;
-}
 
 #charaList img:hover{
   border-radius: 0;
@@ -72,5 +68,10 @@
     width: 180px;
     height: 180px;
   }
+
+  #charaList img:hover{
+    border-radius: 100%;
+  }
+  
 
 }

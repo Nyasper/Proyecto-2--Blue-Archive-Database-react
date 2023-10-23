@@ -9,6 +9,8 @@
 #homeContainer  h1,
 #homeContainer  p{
   margin-top: -8vh;
+  margin-bottom: 28px;
+  text-align: center;
 }
 
 .homeImg{
@@ -28,13 +30,10 @@
 
 @media (max-width: 768px) {
 
-  #homeContainer{
-
-  }
 
   #homeContainer  h1,
   #homeContainer  p{
-    margin-top: 0px;
+    margin-top: 10px;
   }  
 
 

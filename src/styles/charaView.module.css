@@ -12,10 +12,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 5px 10px;
-  width: max-content;
   text-align: center;
   font-size: 1.2em;
   align-self: center;
+  background-color: palevioletred;
 }
 
 #fullImage{
@@ -67,6 +67,9 @@
 
   #infoTable{
     align-items: center;
+    min-width: 100%;
+    padding: 0 10px;
+    line-height: 1.8;
   }
 
 }

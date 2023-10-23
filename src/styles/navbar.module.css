@@ -38,6 +38,8 @@
 
 
 #rangeInput{
+  position: relative;
+  z-index: 20;
   width: 28px;
   margin-right: 4px;
 }
