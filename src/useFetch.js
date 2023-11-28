@@ -12,7 +12,7 @@ export function useFetch(url) {
   
   async function searchData() {
     try {
-      const response = await fetch(`${cloud}/api/${url}`);
+      const response = await fetch(`${local}/api/${url}`);
       const data = await response.json();
       setData(data);
     } catch (error) {

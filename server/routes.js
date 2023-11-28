@@ -14,7 +14,7 @@ router.get("/chara/:charaName", async (req, res) => {
 
 
 router.get("/schools", async (req, res) => {
-  res.json(await Student.find({}).distinct("school"));
+  res.json(await Student.find({}).sort({ school: 1, name: 1 }).distinct("school"));
 });
 
 router.get("/schools/:schoolName", async (req, res) => {

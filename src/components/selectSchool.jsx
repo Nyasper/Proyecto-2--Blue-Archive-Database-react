@@ -8,13 +8,14 @@ export default function SelectSchool(props){
       <div>
       <HeaderNoSearch title="Select a School" theme={props.theme} />
       <ul id={styles.selectSchool} className={props.theme} >
-      {data?.map((school,index)=>(
-        <li key={index}>
-          <p>{school}</p>
-          <Link to={'./'+school}>
-            <img src={'/extras/schools/'+school+'.png'} alt={school+' School'} />
-          </Link>
-        </li>))}
+        {data?.map((school,index)=>(
+          <li key={index}>
+            <p>{school}</p>
+            <Link to={'./'+school}>
+              <img src={`/extras/schools/${school}.png`} alt={`${school} image`} />
+            </Link>
+          </li>))
+        }
       </ul>
       </div>
     ) : (
