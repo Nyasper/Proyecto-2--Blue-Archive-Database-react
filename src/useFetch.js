@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const local = 'http://localhost:3000'
-const cloud = 'https://proyecto-2-backend.vercel.app'
+const cloud = 'https://proyecto-2-backend.vercel.app/'
 
 export function useFetch(url) {
   const [data, setData] = useState(null);
@@ -12,7 +12,12 @@ export function useFetch(url) {
 
   async function searchData() {
     try {
-      const response = await fetch(`${cloud}/api/${url}`);
+      const response = await axios.get(`${cloud}/api/${url}`, {
+        headers: {
+          'Access-Control-Allow-Origin': 'https://blue-archive-database.vercel.app',
+        },
+      });
+
       const data = await response.json();
       setData(data);
     } catch (error) {

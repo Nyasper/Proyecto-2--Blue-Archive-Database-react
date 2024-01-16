@@ -1,7 +1,6 @@
 export default function categoryView(props){
   const { categoryData } = useParams()
-  console.log('categori data',categoryData)
-  const { data } = useFetch(`/category/${props.categoryName}/${categoryData}`)
+  const { data } = useFetch(`category/${props.categoryName}/${categoryData}`)
   const searchRef = useRef()
     const charaListRef = useRef()
 
