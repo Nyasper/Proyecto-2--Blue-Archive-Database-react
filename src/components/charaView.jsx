@@ -38,7 +38,7 @@ export default function CharaView(props){
       <>
  {data? (
    <div id={styles.charaViewContainer} className={props.theme} > 
-              <img src={`/media/${data[0].school}/${data[0].charaName}_full.png`} alt={`${data[0].charaName}`} id={styles.fullImage}/>
+              <img src={data[0].localImageFullSrc} alt={`${data[0].charaName} full image`} id={styles.fullImage}/>
               <div id={styles.infoTable}>
               <h2>{data[0].charaName.replaceAll('_',' ')} </h2>
               {data[0].name? <p><b>Name: </b><Link to={`/characters/category/name/${data[0].name}`}>{data[0].name}</Link></p> :null }
@@ -51,7 +51,7 @@ export default function CharaView(props){
               {data[0].designer? <p><b>Designer: </b> <Link to={`/characters/category/designer/${data[0].designer}`} >{data[0].designer}</Link></p> :null }
               {data[0].illustrator? <p><b>Illustrator: </b><Link to={`/characters/category/illustrator/${data[0].illustrator}`}>{data[0].illustrator}</Link></p> :null }
               {data[0].voice? <p><b>Voice: </b><Link to={`/characters/category/voice/${data[0].voice}`} >{data[0].voice}</Link>
-              <audio ref={audioRef} onPlay={playingAudio} onEnded={playStopped} src={`/media/${data[0].school}/${data[0].charaName}.ogg`} />
+              <audio ref={audioRef} onPlay={playingAudio} onEnded={playStopped} src={data[0].localAudioSrc} />
               <i className={`uil uil-play ${styles.mediaIcon}`} ref={playButtonRef} onClick={playAudio} />
               <i className={`uil uil-stop-circle ${styles.mediaIcon}`} ref={stopButtonRef} onClick={stopPlay} hidden />
               </p> : null}
@@ -59,6 +59,7 @@ export default function CharaView(props){
               {data[0].combatClass? <p><b>Combat Class: </b><Link to={`/characters/category/combatClass/${data[0].combatClass}`}>{data[0].combatClass}</Link></p> :null }
               {data[0].weaponType? <p><b>Weapon Type: </b><Link to={`/characters/category/weaponType/${data[0].weaponType}`}>{data[0].weaponType}</Link></p> :null }
               {data[0].releaseDate? <p><b>Release Date: </b>{data[0].releaseDate}</p> :null }
+              {data[0].skinSet? <p><b>Skin set: </b><Link to={`/characters/category/skinSet/${data[0].skinSet}`}>{data[0].skinSet.replaceAll('_',' ')}</Link></p> :null }
               {data[0].url? <p><b>source: </b><a id={styles.charaUrl} href={data[0].url} target="_blank">{data[0].url}</a></p> :null}
               </div>
           </div>
@@ -70,7 +71,7 @@ export default function CharaView(props){
     }
 import {  useParams } from "react-router-dom"
 import { useFetch  } from "../useFetch"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import LoadingScreen from "./loadingScreen"
 import { Link } from "react-router-dom"
 import styles from "../styles/charaView.module.css"

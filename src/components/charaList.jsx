@@ -5,7 +5,7 @@ export default function CharaList(props){
       <ul id={styles.charaList} ref={props.charaListRef} >
       {props.data.map((chara)=>(
         <li key={chara._id} >
-        <CharaItem charaName={chara.charaName.replaceAll('_',' ')} school={chara.school} imgSrc={chara.charaName} url={chara.charaName} theme={props.theme} />
+        <CharaItem charaName={chara.charaName.replaceAll('_',' ')} school={chara.school} imgSrc={chara.charaName} url={chara.charaName} theme={props.theme} localImageProfileSrc={chara.localImageProfileSrc} />
         </li>))}
       </ul>
       ) : (

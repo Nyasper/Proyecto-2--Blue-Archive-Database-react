@@ -6,7 +6,7 @@ export default function Allcharacters(props){
     return (
           <div className={`${props.theme} gridRow2`} >
           <Header title='All Characters' theme={props.theme} inputRef={searchRef} inputEvent={()=>searching(charaListRef, searchRef)} />
-          <CharaList data={data} theme={props.theme} charaListRef={charaListRef} />
+          <CharaList data={data} theme={props.theme} charaListRef={charaListRef} imageProfileSrc={props.imageProfileSrc}  />
           </div>
           )
         }

@@ -52,6 +52,9 @@ const studentSchema = new Schema({
   releaseDate: {
     type: String
   },
+  skinSet: {
+    type: String
+  },
   pageUrl: {
     type: String
   },
