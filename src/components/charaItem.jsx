@@ -1,11 +1,14 @@
-export default function CharaItem(props){
-   return(
-    <Link to={props.url}  >
-      <p className={props.theme} >{props.charaName}</p>
-      <img src={props.localImageProfileSrc} loading="lazy" />
-    </Link>
-    )
+export default function CharaItem(props) {
+	return (
+		<Link to={props.charaName}>
+			<p className={props.theme}>{props.charaName.replaceAll('_', ' ')}</p>
+			<img
+				src={`/media/${props.school}/${props.charaName}.png`}
+				loading="lazy"
+			/>
+		</Link>
+	);
 }
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 //src={`/media/${props.school}/${props.imgSrc}.png`} alt={`${props.charaName} image`}
