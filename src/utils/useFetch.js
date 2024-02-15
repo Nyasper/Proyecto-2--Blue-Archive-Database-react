@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const mode = 'http://localhost:3000'; //localhost
-// const mode = 'https://proyecto-2-backend.vercel.app'; //vercel cloud
+//export const mode = 'http://localhost:3000'; //localhost
+export const mode = 'https://proyecto-2-backend.vercel.app/'; //vercel cloud
 
 export function useFetch(url) {
 	const [data, setData] = useState(null);
