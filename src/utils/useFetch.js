@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
-//export const mode = 'http://localhost:3000'; //localhost
-export const mode = 'https://proyecto-2-backend.vercel.app'; //vercel cloud
+export const mode = 'http://localhost:3000'; //localhost
+// export const mode = 'https://proyecto-2-backend.vercel.app'; //vercel cloud
 
 export function useFetch(url) {
 	const [data, setData] = useState(null);
 
 	useEffect(() => {
 		searchData();
-	}, [url]); // Escucha los cambios en la URL
+	}, [url]);
 	return { data };
 
 	async function searchData() {
@@ -19,7 +19,8 @@ export function useFetch(url) {
 			const data = await response.json();
 			setData(data);
 		} catch (error) {
-			console.log('Se ha producido un error:', error);
+			console.error('Se ha producido un error al intentar realizar la petición fetch:', error);
+			setData(null)
 		}
 	}
 }

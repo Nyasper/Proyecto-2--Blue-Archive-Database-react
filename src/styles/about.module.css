@@ -1,48 +1,64 @@
-#aboutContainer{
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 4%  auto;
+#aboutContainer {
+	width: 60%;
+	padding: 10px 60px;
+	margin: 4% auto;
 }
-#aboutContainer > a{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: 1.6em;
-  padding: 5px;
-  justify-content: center;
-}
-
-#aboutContainer > div{
-  padding: 20px;
-  font-size: 1.2em;
-  justify-self: center;
+#githubAnchor {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2em;
+	padding: 10px 15px;
+	margin: 10px auto;
+	justify-content: center;
+	gap: 10px;
+	width: max-content;
+	border-radius: 40px;
 }
 
-#aboutContainer > div > h4{
-  font-size: 2em;
-  text-align: center;
+#githubAnchor:hover {
+	background-color: rgb(69, 26, 110);
+}
+
+#githubAnchor > img {
+	aspect-ratio: 49/48;
+	width: 52px;
+}
+#aboutContainer > div {
+	padding: 20px;
+	font-size: 1.2em;
+	justify-self: center;
+}
+
+#aboutContainer > div > h4 {
+	font-size: 2em;
+	text-align: center;
+}
+
+.anchor {
+	text-decoration: underline;
+	font-weight: bold;
+}
+span {
+	font-weight: bold;
 }
 
 @media (max-width: 768px) {
+	#aboutContainer {
+		width: 100%;
+		flex-flow: column-reverse wrap;
+		margin-top: 60px;
+		position: relative;
+		left: -15px;
+		text-align: center;
+		height: 100vh;
+		width: 100vw;
+	}
 
-
-  #aboutContainer{
-    width: 100%;
-    flex-flow: column-reverse wrap;
-    margin-top: 60px;
-    position: relative;
-    left: -15px;
-    text-align: center; height: 100vh;
-    width: 100vw;
-  }
-
-  #aboutContainer > div{
-    min-width: min-content;
-    font-size: 1.2em;
-    margin: 0 auto;
-  }
-
+	#aboutContainer > div {
+		min-width: min-content;
+		font-size: 1.2em;
+		margin: 0 auto;
+	}
 }

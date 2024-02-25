@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 //Imports Components
 import Navbar from './components/navbar';
@@ -8,10 +8,11 @@ import LoadingScreen from './components/loadingScreen';
 //import Pages
 import Home from './pages/home';
 import AllCharacters from './pages/allCharacters';
-import SelectSchool from './pages/selectSchool';
+import CategoryView from './pages/categoryView';
 import CharaView from './pages/charaView';
 import About from './pages/about';
 import Page404 from './pages/page404';
+import AllCategories from './pages/categoryView';
 
 export default function App() {
 	//Loading Screen
@@ -24,6 +25,11 @@ export default function App() {
 	//Theme
 	const [theme, setTheme] = useState(localStorage.getItem('theme'));
 
+	useEffect(() => {
+		// Cuando el tema cambie, actualiza la clase del body
+		document.body.className = theme === 'dark' ? 'mainDark' : 'mainLight';
+	}, [theme]);
+
 	const switchTheme = () => {
 		if (theme === 'light') {
 			setTheme('dark');
@@ -35,11 +41,7 @@ export default function App() {
 	};
 
 	return (
-		<div
-			className={theme === 'dark' ? 'mainDark' : 'mainLight'}
-			id="mainContainer"
-			onLoad={loadingScreenF}
-		>
+		<div id="mainContainer" onLoad={loadingScreenF}>
 			<Navbar themes={theme} themeInput={switchTheme} />
 			{loadingScreen ? (
 				<LoadingScreen />
@@ -54,25 +56,19 @@ export default function App() {
 						element={<CharaView theme={theme} />}
 					/>
 					<Route
-						path="/selectSchool"
-						element={<SelectSchool theme={theme} />}
-					/>
-					<Route
-						path="/selectSchool/:schoolName"
-						element={<AllCharacters theme={theme} />}
-					/>
-					<Route
-						path="/selectSchool/:schoolName/:charaName"
-						element={<CharaView theme={theme} />}
-					/>
-
-					<Route
 						path="/characters/category"
+						element={<CategoryView theme={theme} />}
+					/>
+					<Route
+						path="/characters/category/:categoryName"
+						element={<AllCategories theme={theme} />}
+					/>
+					<Route
+						path="/characters/category/:categoryName/:categoryValue"
 						element={<AllCharacters theme={theme} />}
 					/>
-
 					<Route
-						path="/characters/category/:charaName"
+						path="/characters/category/:categoryName/:categoryValue/:charaName"
 						element={<CharaView theme={theme} />}
 					/>
 
