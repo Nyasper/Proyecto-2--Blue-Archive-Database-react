@@ -2,7 +2,7 @@ export default function CharaView(props) {
 	const { charaName } = useParams();
 
 	//Fetch
-	const { data } = useFetch(charaName);
+	const { data, categories } = useFetchWithCategories(charaName);
 
 	//Audio Play
 
@@ -40,139 +40,19 @@ export default function CharaView(props) {
 				id={styles.fullImage}
 			/>
 			<div id={styles.infoTable}>
-				<h2>{data.charaName.replaceAll('_', ' ')} </h2>
-				{data.name ? (
-					<p>
-						<b>Name: </b>
-						<Link to={`/characters/category/name/${data.name}`}>
-							{data.name}
-						</Link>
+				<h2>{data.charaName.replaceAll('_', ' ')}</h2>
+				{categories.map((c, i) => (
+					<p key={i}>
+						<b>{c}: </b>
+						<Link to={`/characters/category/${c}/${data[c]}`}>{data[c]}</Link>
 					</p>
-				) : null}
-				{data.lastName ? (
-					<p>
-						<b>Last Name: </b> {data.lastName}
-					</p>
-				) : null}
-				{data.age ? (
-					<p>
-						<b>Age: </b>{' '}
-						<Link to={`/characters/category/age/${data.age}`}>{data.age}</Link>
-					</p>
-				) : null}
-				{data.school ? (
-					<p>
-						<b>School: </b>{' '}
-						<Link to={`/characters/category/school/${data.school}`}>
-							{data.school}
-						</Link>
-					</p>
-				) : null}
-				{data.birthday ? (
-					<p>
-						<b>Birthday: </b>
-						{data.birthday}
-					</p>
-				) : null}
-				{data.height ? (
-					<p>
-						<b>Height: </b>
-						{data.height}
-					</p>
-				) : null}
-				{data.hobbies ? (
-					<p>
-						<b>Hobbies: </b>
-						{data.hobbies}
-					</p>
-				) : null}
-				{data.designer ? (
-					<p>
-						<b>Designer: </b>
-						<Link to={`/characters/category/designer/${data.designer}`}>
-							{data.designer}
-						</Link>
-					</p>
-				) : null}
-				{data.illustrator ? (
-					<p>
-						<b>Illustrator: </b>
-						<Link to={`/characters/category/illustrator/${data.illustrator}`}>
-							{data.illustrator}
-						</Link>
-					</p>
-				) : null}
-				{data.voice ? (
-					<p>
-						<b>Voice: </b>
-						<Link to={`/characters/category/voice/${data.voice}`}>
-							{data.voice}
-						</Link>
-						<audio
-							ref={audioRef}
-							onPlay={playingAudio}
-							onEnded={playStopped}
-							src={`/media/${data.school}/${data.charaName}.ogg`}
-						/>
-						<i
-							className={`uil uil-play ${styles.mediaIcon}`}
-							ref={playButtonRef}
-							onClick={playAudio}
-						/>
-						<i
-							className={`uil uil-stop-circle ${styles.mediaIcon}`}
-							ref={stopButtonRef}
-							onClick={stopPlay}
-							hidden
-						/>
-					</p>
-				) : null}
-				{data.role ? (
-					<p>
-						<b>Role: </b>
-						<Link to={`/characters/category/role/${data.role}`}>
-							{data.role.replace('_', '/')}
-						</Link>
-					</p>
-				) : null}
-				{data.combatClass ? (
-					<p>
-						<b>Combat Class: </b>
-						<Link to={`/characters/category/combatClass/${data.combatClass}`}>
-							{data.combatClass}
-						</Link>
-					</p>
-				) : null}
-				{data.weaponType ? (
-					<p>
-						<b>Weapon Type: </b>
-						<Link to={`/characters/category/weaponType/${data.weaponType}`}>
-							{data.weaponType}
-						</Link>
-					</p>
-				) : null}
-				{data.releaseDate ? (
-					<p>
-						<b>Release Date: </b>
-						{data.releaseDate}
-					</p>
-				) : null}
-				{data.skinSet ? (
-					<p>
-						<b>Skin set: </b>
-						<Link to={`/characters/category/skinSet/${data.skinSet}`}>
-							{data.skinSet.replaceAll('_', ' ')}
-						</Link>
-					</p>
-				) : null}
-				{data.url ? (
-					<p>
-						<b>source: </b>
-						<a id={styles.charaUrl} href={data.url} target="_blank">
-							{data.url}
-						</a>
-					</p>
-				) : null}
+				))}
+				<p>
+					<b>pageUrl: </b>
+					<a id={styles.charaUrl} href={data.pageUrl} target="_blank">
+						{data.pageUrl}
+					</a>
+				</p>
 			</div>
 		</div>
 	) : (
@@ -180,7 +60,7 @@ export default function CharaView(props) {
 	);
 }
 import { useParams } from 'react-router-dom';
-import { useFetch } from '../utils/useFetch';
+import { useFetch, useFetchWithCategories } from '../utils/useFetch';
 import { useRef } from 'react';
 import LoadingScreen from '../components/loadingScreen';
 import { Link } from 'react-router-dom';

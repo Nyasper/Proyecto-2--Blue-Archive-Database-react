@@ -14,11 +14,6 @@
 	transition: all ease-out 0.05s;
 }
 
-.liNavbar:hover {
-	transition: all ease-in 0.04s;
-	filter: drop-shadow(2px 2px 8px white);
-}
-
 #themeSection {
 	display: flex;
 	align-items: center;
@@ -26,14 +21,15 @@
 }
 
 .aNavBar {
-	border-radius: 20px;
 	padding: 8px 12px;
+}
+.currentRoute {
+	border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .aNavBar:hover {
 	cursor: pointer;
-	transition: 0.2s ease all;
-	outline: 1px solid white;
+	border-bottom: 2px solid white;
 }
 
 #logoImg {

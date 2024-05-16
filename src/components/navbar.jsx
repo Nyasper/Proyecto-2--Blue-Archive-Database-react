@@ -33,6 +33,7 @@ export default function Navbar(props) {
 			path: '/about',
 		},
 	];
+	const currentRoute = useLocation().pathname;
 
 	return (
 		<nav id={styles.navId} className={`${props.themes}`}>
@@ -41,10 +42,12 @@ export default function Navbar(props) {
 					<img src="/extras/Shiroko_Swimsuit_Icon.png" id={styles.logoImg} />
 				</li>
 				{Links.map((link) => (
-					<li key={link.name} className={styles.liNavbar}>
+					<li key={link.name}>
 						<Link
 							to={link.path}
-							className={`${props.themes} ${styles.aNavBar}`}
+							className={`${props.themes} ${styles.aNavBar} ${
+								currentRoute === link.path ? styles.currentRoute : ''
+							}`}
 						>
 							{link.name}
 						</Link>
@@ -68,6 +71,6 @@ export default function Navbar(props) {
 		</nav>
 	);
 }
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useRef } from 'react';
 import styles from '../styles/navbar.module.css';
