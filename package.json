@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build:client": "cd client && npm run build",
-		"build:server": "cd server && tsc",
+		"build:server": "cd server && npx tsc",
 		"build": "npm-run-all --parallel build:client build:server",
 		"start": "cd ./server && npm run start",
 		"dev": "cd ./server && npm run dev"
