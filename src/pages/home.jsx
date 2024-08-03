@@ -1,13 +1,11 @@
-export default function Home(props) {
+import About from './about';
+import { GameInfoComponent } from '../components/gameInfoComponent';
+
+export default function Home() {
 	return (
-		<div id={`${styles.homeContainer}`} className={`${props.theme}`}>
-			<h1>Blue Archive Data Base</h1>
-			<img
-				src="/extras/Shiroko_Swimsuit_Icon.png"
-				alt="shiroko_picture"
-				className={styles.homeImg}
-			/>
-		</div>
+		<>
+			<GameInfoComponent />
+			<About />
+		</>
 	);
 }
-import styles from '../styles/homePage.module.css';

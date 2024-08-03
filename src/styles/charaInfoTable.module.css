@@ -1,0 +1,32 @@
+#charaDetailTable {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#charaDetailTable th,
+#charaDetailTable td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: center; /* Centrar el texto horizontalmente */
+	vertical-align: middle; /* Centrar el texto verticalmente */
+}
+
+#charaDetailTable th {
+	background-color: #3d3838;
+	font-weight: bold;
+}
+
+#charaDetailTable tr:nth-child(even) {
+	background-color: #852c2c;
+}
+#charaDetailTable tr:nth-child(odd) {
+	background-color: #581f1f;
+}
+button {
+	background-color: #414141;
+	cursor: pointer;
+}
+button:active {
+	background-color: rgb(14, 14, 14);
+}

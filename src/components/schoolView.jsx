@@ -1,3 +1,10 @@
+import searching from '@/services/searchUtils.js';
+import { useFetch } from '@/services/useFetch';
+import { useParams } from 'react-router-dom';
+import CharaList from './charaList';
+import Header from './header';
+import { useRef } from 'react';
+
 export default function SchoolView(props) {
 	const { schoolName } = useParams();
 	const { data } = useFetch(`schools/${schoolName}`);
@@ -10,16 +17,8 @@ export default function SchoolView(props) {
 				title={`School: ${schoolName}`}
 				inputRef={searchRef}
 				inputEvent={() => searching(charaListRef, searchRef)}
-				theme={props.theme}
 			/>
 			<CharaList data={data} charaListRef={charaListRef} theme={props.theme} />
 		</section>
 	);
 }
-
-import searching from '../utils/searchUtils.js';
-import { useFetch } from '../utils/useFetch';
-import { useParams } from 'react-router-dom';
-import CharaList from './charaList';
-import Header from './header';
-import { useRef } from 'react';

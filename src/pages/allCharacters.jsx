@@ -1,45 +1,40 @@
-export default function Allcharacters(props) {
+import { useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import { useFetch } from '@/services/useFetch.js';
+import { CharaList } from '@/components/charaList.jsx';
+
+export default function Allcharacters({ imageProfileSrc }) {
 	const { categoryName, categoryValue } = useParams();
+
+	const searchRef = useRef();
+	const charaListRef = useRef();
 
 	const fetchUrl =
 		categoryName && categoryValue
 			? `category/${categoryName}?value=${categoryValue}`
 			: 'all';
 
-	const { data } = useFetch(fetchUrl);
-	/*
-	useFetch(() => {
-		localStorage.setItem('charaData', JSON.stringify(data));
-	}, []);
-	*/
-	const searchRef = useRef();
-	const charaListRef = useRef();
+	const { data, error } = useFetch(fetchUrl);
 
-	return data ? (
-		<div className={`${props.theme} gridRow2`}>
-			<Header
-				title="All Characters"
-				search={true}
-				theme={props.theme}
-				inputRef={searchRef}
-				inputEvent={() => searching(charaListRef, searchRef)}
-			/>
-			<CharaList
-				data={data}
-				theme={props.theme}
-				charaListRef={charaListRef}
-				imageProfileSrc={props.imageProfileSrc}
-			/>
-		</div>
-	) : (
-		<LoadingScreen />
+	if (error) {
+		return <div>Error: {error}</div>;
+	}
+
+	return (
+		<CharaList
+			title={'All Characters'}
+			data={data}
+			charaListRef={charaListRef}
+			imageProfileSrc={imageProfileSrc}
+		/>
 	);
 }
 
-import searching from '../utils/searchUtils';
-import { useRef } from 'react';
-import { useFetch } from '../utils/useFetch.js';
-import { useParams } from 'react-router-dom';
-import CharaList from '../components/charaList.jsx';
-import Header from '../components/header.jsx';
-import LoadingScreen from '../components/loadingScreen.jsx';
+{
+	/* <Header
+	title="All Characters"
+	searchBar={true}
+	inputRef={searchRef}
+	inputEvent={() => searching(charaListRef, searchRef)}
+/>; */
+}

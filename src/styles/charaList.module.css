@@ -1,78 +1,84 @@
-#charaList{
-  display: flex;
-  flex-wrap:  wrap;
-  justify-content: center;
-  width: 95%;
+#listMainContainer {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 80%;
 }
 
-#charaList > li {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  justify-content: flex-start;
-  margin: 10px 15px;  
-  user-select: none;
+#charaList {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	transition-property: width, margin, padding;
+	transition: 0.5s ease;
+	overflow: auto;
 }
 
-#charaList > li > a {
-  text-align: center;
-  font-size: 1em;
-  transition: .02s all;
-  width: 120px;
-  height: 140px;
-}
-  
-#charaList p{
-  white-space: nowrap;
-}
+/* charaListSideComponent */
 
-#charaList > li > a > img {
-  position: relative;
-  margin-top: 3px;
-  width: 120px;
-  height: 120px;
-  z-index: 1000;
-  border-radius: 100%;
-  object-fit: cover;
-  transition: .2s ease all;
+#selectedImageContainer {
+	position: fixed;
+	margin: 0;
+	top: 22%;
+	right: 2%;
+	width: 20%;
+	height: 80%;
 }
 
-
-#charaList img:hover{
-  border-radius: 0;
+#imageAContainer {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	padding-bottom: 5%;
 }
 
-
-@media (max-width: 768px) {
-
-  
- 
-  #charaList{
-    position: relative;
-    width: 100vw;
-    min-width: 100%;
-  }
-
-  #charaList > li{
-    margin: 30px 20px; 
-    padding: 0;
-  }
-
-  #charaList > li > a{
-    width: 150px;
-    height: 120px;
-    font-size: 1.1em;
-
-  }
-
-  #charaList > li > a > img {
-    width: 150px;
-    height: 150px;
-  }
-
-  #charaList img:hover{
-    border-radius: 100%;
-  }
-  
-
+#selectedImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
 }
+
+.animationSlide {
+	animation: animationFromCharaListToSlide 0.6s;
+}
+
+@keyframes animationFromCharaListToSlide {
+	0% {
+		transform: translateX(-200px);
+		filter: blur(10px) opacity(0) grayscale(1);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}
+/* @media (max-width: 768px) {
+	#charaList {
+		position: relative;
+		width: 100vw;
+		min-width: 100%;
+	}
+
+	#charaList > li {
+		margin: 30px 20px;
+		padding: 0;
+	}
+
+	#charaList > li > a {
+		width: 150px;
+		height: 120px;
+		font-size: 1.1em;
+	}
+
+	#charaList > li > a > img {
+		width: 150px;
+		height: 150px;
+	}
+
+	#charaList img:hover {
+		border-radius: 100%;
+	}
+} */
