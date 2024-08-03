@@ -34,3 +34,5 @@ app
 	});
 
 export default app;
+
+// "build": "npm-run-all --parallel build:client build:server",
