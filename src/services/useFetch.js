@@ -6,8 +6,8 @@ import { DaysPassed } from './dateHandler';
 import { db } from './indexedDB';
 
 
-export const mode = 'http://localhost:3000'; //localhost
-// export const mode = 'https://proyecto-2-backend.vercel.app'; //vercel cloud
+// export const mode = 'http://localhost:3000'; //localhost
+export const mode = 'https://proyecto-2-backend.vercel.app'; //vercel cloud
 let daysPassed = DaysPassed;
 const maxDaysToCache = 14;
 
