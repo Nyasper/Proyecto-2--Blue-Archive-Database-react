@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from '@/styles/gameInfoComponent.module.css';
-import aboutStyles from '../styles/about.module.css';
+// import aboutStyles from '../styles/about.module.css';
 
 import { Button } from '@mui/material';
 

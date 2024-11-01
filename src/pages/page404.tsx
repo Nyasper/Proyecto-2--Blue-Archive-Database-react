@@ -1,3 +1,5 @@
+import styles from '../styles/page404.module.css';
+
 export default function Page404() {
 	return (
 		<section id={styles.p404}>
@@ -9,4 +11,3 @@ export default function Page404() {
 		</section>
 	);
 }
-import styles from '../styles/page404.module.css';
