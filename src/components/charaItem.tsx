@@ -1,10 +1,11 @@
 import styles from '@/styles/charaItem.module.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-export default function CharaItem({ charaName, school, clickEvent }) {
+export default function CharaItem({ charaName, school, clickEvent }: Props) {
 	return (
 		<li className={styles.charaItemContainer}>
 			<div className={styles.imgContainer}>
-				<img
+				<LazyLoadImage
 					className={styles.charaImage}
 					onClick={clickEvent}
 					src={`/media/${school}/${charaName}.png`}
@@ -14,4 +15,10 @@ export default function CharaItem({ charaName, school, clickEvent }) {
 			<p className={styles.charaItemText}>{charaName.replaceAll('_', ' ')}</p>
 		</li>
 	);
+}
+
+interface Props {
+	charaName: string;
+	school: string;
+	clickEvent: () => void;
 }

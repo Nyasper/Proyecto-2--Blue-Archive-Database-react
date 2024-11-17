@@ -1,11 +1,14 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App.jsx';
+import App from './App.tsx';
 import './main.css';
-import { StoreProvider } from './services/storeContext';
+import { StoreProvider } from './stores/storeContext.tsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root');
+if (!root) throw new Error('root element not found');
+
+ReactDOM.createRoot(root).render(
 	<React.StrictMode>
 		<StoreProvider>
 			<BrowserRouter>

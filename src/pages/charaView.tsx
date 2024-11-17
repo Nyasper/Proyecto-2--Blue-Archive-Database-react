@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useFetch } from '@/services/useFetch';
+import { useFetch } from '../services/useFetch';
 import styles from '@/styles/charaView.module.css';
 import { CharaInfoTable } from '../components/charaInfoTable';
 

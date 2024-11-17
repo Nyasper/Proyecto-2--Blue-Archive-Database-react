@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from '@/styles/charaList.module.css';
-
-export function CharaListSideComponent({ currentChara, selectedImageRef }) {
+import type { RefObject } from 'react';
+import type { CharacterImageGlobalState } from '../stores/storeContext';
+export function CharaListSideComponent({
+	currentChara,
+	selectedImageRef,
+}: Props) {
 	return currentChara && currentChara.name && currentChara.url ? (
 		<div id={styles.selectedImageContainer}>
 			<h2 className="centerText">
@@ -33,4 +37,9 @@ export function CharaListSideComponent({ currentChara, selectedImageRef }) {
 			</h2>
 		</div>
 	);
+}
+
+interface Props {
+	currentChara: CharacterImageGlobalState;
+	selectedImageRef: RefObject<HTMLImageElement>;
 }
