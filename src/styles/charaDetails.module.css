@@ -1,0 +1,71 @@
+#charaViewContainer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 88vh;
+	border: 1px solid white;
+	border-radius: 20px;
+}
+
+.charaFullImage {
+	object-fit: contain;
+	margin-right: 200px;
+}
+
+.mediaIcon {
+	margin-left: 5px;
+}
+
+#charaViewContainer a {
+	color: rgb(72, 117, 214);
+}
+
+@media (max-width: 768px) {
+	#charaViewContainer {
+		flex-direction: column;
+		height: 100%;
+		margin-top: 50px;
+	}
+
+	.charaFullImage {
+		object-fit: contain;
+		margin-right: 0;
+		width: 100%;
+		align-self: center;
+	}
+}
+
+/* Table Info */
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	background-color: #102041;
+	border-radius: 10px;
+	border-spacing: 0;
+	/* width: 100%; */
+	width: auto;
+	text-align: center;
+	overflow: hidden;
+	background-color: rgb(77, 5, 29);
+}
+
+table th,
+table td {
+	/* border: 1px solid #ccc; */
+	padding: 8px;
+	/* text-align: center; */
+	vertical-align: middle;
+}
+
+button {
+	background-color: #102041;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 20px;
+	margin: 0;
+	margin-left: 10px;
+	cursor: pointer;
+}
+button:active {
+	background-color: rgb(14, 14, 14);
+}

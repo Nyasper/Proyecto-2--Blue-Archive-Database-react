@@ -1,40 +1,25 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { useFetch } from '@/services/useFetch.js';
-import { CharaList } from '@/components/charaList.jsx';
+import { CharaList } from '../components/charaList';
+import { StoreContext } from '../stores/storeContext';
 
-export default function Allcharacters({ imageProfileSrc }) {
+export default function Allcharacters() {
 	const { categoryName, categoryValue } = useParams();
 
-	const searchRef = useRef();
-	const charaListRef = useRef();
+	const charaListRef = useRef<HTMLUListElement | null>(null);
+	const store = useContext(StoreContext);
 
 	const fetchUrl =
 		categoryName && categoryValue
 			? `category/${categoryName}?value=${categoryValue}`
 			: 'all';
 
-	const { data, error } = useFetch(fetchUrl);
-
-	if (error) {
-		return <div>Error: {error}</div>;
-	}
-
 	return (
 		<CharaList
 			title={'All Characters'}
-			data={data}
+			students={store?.students ?? []}
+			error={store!.studentsError}
 			charaListRef={charaListRef}
-			imageProfileSrc={imageProfileSrc}
 		/>
 	);
-}
-
-{
-	/* <Header
-	title="All Characters"
-	searchBar={true}
-	inputRef={searchRef}
-	inputEvent={() => searching(charaListRef, searchRef)}
-/>; */
 }

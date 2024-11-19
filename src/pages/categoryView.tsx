@@ -1,22 +1,30 @@
 import styles from '@/styles/categoryView.module.css';
-import { useFetch } from '@/services/useFetch';
 import { useParams, Link } from 'react-router-dom';
-import { useRef } from 'react';
-import { getImgSrc, manageCategoryName } from '@/services/mangeCategories';
+import { useContext, useEffect, useMemo, useRef } from 'react';
+import { manageCategoryName } from '../services/studentUtils';
+import { StoreContext } from '../stores/storeContext';
 
 export default function CategoryView() {
-	const { categoryName } = useParams();
-	const fetchUrl = categoryName ? `category/${categoryName}` : 'category/all';
+	const { categoryName } = useParams<{ categoryName: string }>();
+	useEffect(
+		() => console.log('andamo en category view', categoryName),
+		[categoryName]
+	);
+	// const category = categoryName ? `category/${categoryName}` : 'category/all';
+	const store = useContext(StoreContext);
 
-	const { data: categoryData } = useFetch(fetchUrl);
-	const imgSrc = getImgSrc(categoryName);
+	const category = useMemo(() => {
+		if (!store?.students) return;
+
+		return store?.students;
+	}, [store?.students]);
 
 	const charaListRef = useRef();
 
 	return (
 		<div id={styles.categoryDivContainer}>
 			<ul id={styles.categoryUlList} ref={charaListRef}>
-				{categoryData.map((result, index) => (
+				{/* {categoryData.map((result, index) => (
 					<li key={index}>
 						<Link to={'./' + result}>
 							<p>{manageCategoryName(result)}</p>
@@ -25,7 +33,8 @@ export default function CategoryView() {
 							) : null}
 						</Link>
 					</li>
-				))}
+				))} */}
+				<li>aca mostro hacer</li>
 			</ul>
 		</div>
 	);

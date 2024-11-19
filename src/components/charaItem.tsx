@@ -1,5 +1,6 @@
 import styles from '@/styles/charaItem.module.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { getStudentMedia } from '../services/studentUtils';
 
 export default function CharaItem({ charaName, school, clickEvent }: Props) {
 	return (
@@ -8,7 +9,7 @@ export default function CharaItem({ charaName, school, clickEvent }: Props) {
 				<LazyLoadImage
 					className={styles.charaImage}
 					onClick={clickEvent}
-					src={`/media/${school}/${charaName}.png`}
+					src={getStudentMedia({ charaName, school }, 'imgProfile')}
 					loading="lazy"
 				/>
 			</div>
