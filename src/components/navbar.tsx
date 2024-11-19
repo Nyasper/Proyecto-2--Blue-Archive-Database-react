@@ -13,7 +13,7 @@ export function Navbar() {
 		},
 		{
 			name: 'Categories',
-			path: '/characters/category',
+			path: '/characters/category/all',
 		},
 		{
 			name: 'About',

@@ -1,22 +1,5 @@
 import type { MediaType, Student } from '../models/student.model';
 
-// categories to doesn't display on character info:
-const categoriesBlackList: (keyof Student)[] = [
-	'charaName',
-	'pageUrl',
-	'pageImageProfileUrl',
-	'pageImageFullUrl',
-	'audioUrl',
-];
-
-// categories without links
-export const categoriesNoUrl: (keyof Student)[] = [
-	'lastName',
-	'birthday',
-	'hobbies',
-	'voice',
-];
-
 //get all the keys that doesn't are undefined.
 export function getKeysWithoutNull(
 	student: Student | undefined
@@ -44,10 +27,65 @@ export function getStudentMedia(
 
 	throw new Error('Error on "getStudentMedia", media type not supported');
 }
+export function getPropertyDataDistinct(
+	students: Student[],
+	propName: ExcludedCategoriesUrl | 'all'
+) {
+	if (propName === 'all' || !propName) {
+		const allCategories = (
+			Object.keys(students[0]) as (keyof Student)[]
+		).filter((c) => !categoriesNoUrl.includes(c));
 
-export const manageCategoryName = (categoryName: keyof Student) => {
+		return allCategories;
+	}
+
+	if (categoriesNoUrl.includes(propName)) return [];
+
+	return [...new Set(students.map((s) => s[propName]))];
+}
+
+export const handleCategoryName = (
+	categoryName: string | number | Date | null
+): string => {
 	if (categoryName === 'combatClass') return 'combat class';
 	if (categoryName === 'weaponType') return 'weapon type';
 	if (categoryName === 'skinSet') return 'skin';
-	return categoryName;
+
+	return String(categoryName);
 };
+
+// categories to doesn't display on character info:
+const categoriesBlackList: (keyof Student)[] = [
+	'charaName',
+	'pageUrl',
+	'pageImageProfileUrl',
+	'pageImageFullUrl',
+	'audioUrl',
+	'createdAt',
+];
+
+// categories without links
+export const categoriesNoUrl: (keyof Student)[] = [
+	'charaName', //TODO: nose si dejar o quitar
+	'lastName',
+	'birthday',
+	'hobbies',
+	'voice',
+	'createdAt',
+	'pageImageFullUrl',
+	'pageImageProfileUrl',
+	'audioUrl',
+	'pageUrl',
+];
+
+export type ExcludedCategoriesUrl = Exclude<
+	keyof Student,
+	| 'charaName'
+	| 'lastName'
+	| 'birthday'
+	| 'hobbies'
+	| 'illustrator'
+	| 'voice'
+	| 'createdAt'
+	| 'audioUrl'
+>;

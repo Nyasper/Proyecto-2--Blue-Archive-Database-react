@@ -7,8 +7,8 @@ import { StoreContext } from '../stores/storeContext';
 
 export default function SchoolView(props) {
 	const { schoolName } = useParams();
-	const { students } = useContext(StoreContext)!;
-	const schools = new Set(students.map((s) => s.school));
+	// const { students } = useContext(StoreContext)!;
+	// const schools = new Set(students.map((s) => s.school));
 	const searchRef = useRef<HTMLInputElement>();
 	const charaListRef = useRef<HTMLUListElement>();
 
