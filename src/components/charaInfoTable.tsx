@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { categoriesNoUrl, getStudentMedia } from '../services/studentUtils';
 import type { Student } from '../models/student.model';
+import styles from '../styles/charaDetails.module.css';
+import { Button } from '@mui/material';
 
 export function CharaInfoTable({ categories, chara }: Props) {
 	function renderCategories() {
@@ -15,7 +17,7 @@ export function CharaInfoTable({ categories, chara }: Props) {
 							String(chara[categoryName])
 						) : (
 							<Link
-								to={`/characters/categoryName/${categoryName}/${chara[categoryName]}`}
+								to={`/characters/category/${categoryName}/${chara[categoryName]}`}
 							>
 								{String(chara[categoryName])}
 							</Link>
@@ -25,9 +27,9 @@ export function CharaInfoTable({ categories, chara }: Props) {
 					<td>
 						{chara[categoryName]}
 						<audio src={getStudentMedia(chara, 'audio')} ref={audioRef}></audio>
-						<button type="button" onClick={playAudio}>
+						<Button type="button" onClick={playAudio} variant="contained">
 							Play
-						</button>
+						</Button>
 					</td>
 				)}
 			</tr>
@@ -56,24 +58,25 @@ export function CharaInfoTable({ categories, chara }: Props) {
 	// };
 
 	return (
-		<table>
-			<thead>Aca el thead</thead>
-			<tbody>
-				<tr>
-					<th>Character</th>
-					<td>{chara.charaName?.replaceAll('_', ' ')}</td>
-				</tr>
-				{renderCategories()}
-				<tr>
-					<th>Wiki URL</th>
-					<td>
-						<a href={chara.pageUrl} target="_blank">
-							{chara.pageUrl}
-						</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<div className={styles.tableContainer}>
+			<table>
+				<tbody>
+					<tr>
+						<th>Character</th>
+						<td>{chara.charaName?.replaceAll('_', ' ')}</td>
+					</tr>
+					{renderCategories()}
+					<tr>
+						<th>Wiki URL</th>
+						<td>
+							<a href={chara.pageUrl} target="_blank">
+								{chara.pageUrl}
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	);
 }
 

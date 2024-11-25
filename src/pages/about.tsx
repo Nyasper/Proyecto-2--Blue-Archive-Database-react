@@ -1,129 +1,40 @@
-import { Link } from 'react-router-dom';
 import styles from '../styles/about.module.css';
-import { Button } from '@mui/material';
-
-export function GameInfoComponent() {
-	return (
-		<div id={styles.gameInfoContainer}>
-			<h1>Blue Archive</h1>
-			<img
-				src="/extras/Shiroko_Swimsuit_Icon.png"
-				alt="shiroko_picture"
-				className={styles.homeImg}
-			/>
-			<p>
-				Blue Archive is a free-to-play mobile game developed by Nexon Games.
-				Game uses gacha game mechanics for obtaining characters as the primary
-				monetization method.
-			</p>
-			<Button variant="contained">
-				<Link to={'/characters'}>Start searching Characters</Link>
-			</Button>
-			<a href={'#' + styles.arrowDown}>
-				<img id={styles.arrowDown} src="/extras/arrowDown.svg" alt="" />
-			</a>
-		</div>
-	);
-}
 
 export default function About() {
 	return (
 		<div id={`${styles.aboutContainer}`}>
-			<h2 className="subtitle">More About this Project</h2>
-
-			<div id="englishAboutContainer">
-				<h4>English</h4>
-				<br />
-				<span>Blue Archive Database</span> is my second full stack application
-				developed, designed as a 'wiki' where users can access a variety of data
-				related to the popular mobile game{' '}
+			<h2 className="subtitle">About this Project</h2>
+			<p>
+				<span>Blue Archive Database</span> is an app where users can access a
+				variety of data related to the popular mobile game{' '}
 				<a
 					href="https://bluearchive.nexon.com/home"
 					className={styles.anchor}
 					target="_blank"
+					rel="noopener noreferrer"
 				>
 					Blue Archive
 				</a>
 				.
-				<p>
-					For the implementation of this project, the JavaScript React library
-					was used to develop the frontend, while the backend was built using
-					Fastify in conjunction with MongoDB.
-				</p>
-				<br />
-				<p>
-					The main functionality of the application involves sending Fetch
-					requests to the backend API to retrieve stored information about the
-					characters in the MongoDB database and present it in a user-friendly
-					interface.
-				</p>
-				<br />
-				<p>
-					It is important to note that all characters and illustrations shown in
-					this application are property of the aforementioned mobile game. The
-					information used was obtained from the game's{' '}
-					<a
-						href="https://bluearchive.wiki/wiki/Characters"
-						target="_blank"
-						className={styles.anchor}
-					>
-						wiki
-					</a>{' '}
-					for educational and learning purposes.
-				</p>
-			</div>
+			</p>
 
-			<div id="spanishAboutContainer">
-				<h4>Español</h4>
-				<br />
-				<span>Blue Archive Database</span> es mi segunda aplicación full stack
-				desarrollada, diseñada como una 'wiki' donde los usuarios pueden acceder
-				a una variedad de datos relacionados con el popular juego para móviles
-				Blue Archive.{' '}
+			<p>
+				This project was built with React. The main functionality of the
+				application is to search data of different characters.
+			</p>
+
+			<p>
+				All characters and illustrations shown in this application aren't mine.
+				The information used was extracted from the game's{' '}
 				<a
-					href="https://bluearchive.nexon.com/home"
-					className={styles.anchor}
-					rel="noopener noreferrer"
+					href="https://bluearchive.wiki/wiki/Characters"
 					target="_blank"
+					className={styles.anchor}
 				>
-					Blue Archive
-				</a>
-				<p>
-					Para la implementación de este proyecto, se empleó la biblioteca de
-					JavaScript React para desarrollar el frontend, mientras que el backend
-					se construyó utilizando Fastify en conjunto con MongoDB.
-				</p>
-				<br />
-				<p>
-					La funcionalidad principal de la aplicación consiste en enviar
-					solicitudes Fetch a la API del backend para recuperar la información
-					almacenada sobre los personajes en la base de datos MongoDB, y
-					presentarla de manera accesible en la interfaz de usuario.
-				</p>
-				<br />
-				<p>
-					Es importante destacar que todos los personajes e ilustraciones
-					mostrados en esta aplicación son propiedad del juego para móviles
-					mencionado previamente. La información utilizada fue obtenida de la{' '}
-					<a
-						href="https://bluearchive.wiki/wiki/Characters"
-						target="_blank"
-						className={styles.anchor}
-					>
-						wiki
-					</a>{' '}
-					del juego con fines educativos y de aprendizaje.
-				</p>
-			</div>
-
-			<a
-				href="https://github.com/Nyasper/Proyecto-2--Blue-Archive-character-selection-react"
-				id={styles.githubAnchor}
-				target="_blank"
-			>
-				<img src="/extras/github.svg" alt="github svg" />
-				<p>My Github</p>
-			</a>
+					wiki
+				</a>{' '}
+				for educational and learning purposes.
+			</p>
 		</div>
 	);
 }

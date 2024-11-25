@@ -2,46 +2,19 @@
 	width: 60%;
 	padding: 10px 60px;
 	margin: 0 auto;
-}
-#githubAnchor {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.2em;
-	padding: 10px 15px;
-	margin: 10px auto;
-	justify-content: center;
-	gap: 10px;
-	width: max-content;
-	border-radius: 40px;
-}
 
-#githubAnchor:hover {
-	background-color: rgb(69, 26, 110);
-}
+	p {
+		font-size: 1.2em;
+	}
 
-#githubAnchor > img {
-	aspect-ratio: 49/48;
-	width: 52px;
-}
-#aboutContainer > div {
-	padding: 20px;
-	font-size: 1.2em;
-	justify-self: center;
-}
-
-#aboutContainer > div > h4 {
-	font-size: 2em;
-	text-align: center;
-}
-
-.anchor {
-	text-decoration: underline;
-	font-weight: bold;
-}
-span {
-	font-weight: bold;
+	.anchor {
+		text-decoration: underline;
+		font-weight: bold;
+		color: white;
+	}
+	span {
+		font-weight: bold;
+	}
 }
 
 @media (max-width: 768px) {
@@ -60,65 +33,6 @@ span {
 		min-width: min-content;
 		font-size: 1.2em;
 		margin: 0 auto;
-	}
-}
-
-#gameInfoContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.8em;
-	max-width: 70%;
-	margin: 0 auto;
-	min-height: 100vh;
-}
-
-#gameInfoContainer h1,
-#gameInfoContainer p {
-	text-align: center;
-}
-
-.homeImg {
-	border-radius: 20px;
-	border: 2px solid white;
-	filter: drop-shadow(1px 1px 1px white);
-	animation: homeAnimation 2s infinite ease;
-}
-
-@keyframes homeAnimation {
-	0% {
-		filter: drop-shadow(1px 1px 1px white);
-	}
-	50% {
-		filter: drop-shadow(2px 2px 6px white);
-	}
-}
-
-#arrowDown {
-	margin-top: 90px;
-	width: 80px;
-	animation: arrowDownAnimation 0.7s infinite alternate forwards ease-in;
-}
-
-#gameInfoContainer a {
-	color: white;
-	font-weight: bold;
-	font-size: 1.4em;
-}
-
-input {
-	font-size: 1.8em;
-	padding: 5px 10px;
-	width: 400px;
-}
-
-@keyframes arrowDownAnimation {
-	from {
-		transform: translateY(0px);
-	}
-	to {
-		transform: translateY(30px);
 	}
 }
 

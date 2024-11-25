@@ -19,7 +19,6 @@ export default function Allcharacters() {
 			title={'All Characters'}
 			students={store?.students ?? []}
 			error={store!.studentsError}
-			charaListRef={charaListRef}
 		/>
 	);
 }

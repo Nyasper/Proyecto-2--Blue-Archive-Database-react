@@ -9,19 +9,16 @@ export function CharaListSideComponent({
 	return currentChara && currentChara.name && currentChara.url ? (
 		<div id={styles.selectedImageContainer}>
 			<h2 className="centerText">
-				<b className="bold">{currentChara.name}</b>
+				<b className="bold">selected: {currentChara.name}</b>
 			</h2>
-			<Link
-				to={currentChara.name}
-				id={styles.imageAContainer}
-				className={styles.animationSlide}
-			>
+			<Link to={currentChara.name} className={styles.animationSlide}>
 				<img
-					id={styles.selectedImage}
+					className={styles.selectedImage}
 					ref={selectedImageRef}
 					src={currentChara.url}
 				/>
 			</Link>
+			<p>Click to view details</p>
 		</div>
 	) : (
 		<div id={styles.selectedImageContainer}>

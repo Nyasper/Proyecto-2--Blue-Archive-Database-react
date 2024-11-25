@@ -3,12 +3,12 @@ import styles from '@/styles/charaList.module.css';
 import { useContext, useRef, useState } from 'react';
 import { StoreContext } from '../stores/storeContext';
 import { CharaListSideComponent } from './charaListSideComponent';
-import { useEffect, type RefObject } from 'react';
+import { useEffect } from 'react';
 import { Header } from './header';
 import type { Student } from '../models/student.model';
 import { getStudentMedia } from '../services/studentUtils';
 
-export function CharaList({ title, students, error, charaListRef }: Props) {
+export function CharaList({ title, students, error }: Props) {
 	// Right Side Image Preview
 	const store = useContext(StoreContext);
 	const selectedImageRef = useRef<HTMLImageElement | null>(null);
@@ -64,7 +64,7 @@ export function CharaList({ title, students, error, charaListRef }: Props) {
 		);
 	} else {
 		content = (
-			<ul id={styles.charaList} ref={charaListRef}>
+			<ul id={styles.charaList}>
 				{students
 					.filter((chara) => {
 						return chara.charaName
@@ -87,11 +87,13 @@ export function CharaList({ title, students, error, charaListRef }: Props) {
 	return (
 		<>
 			<Header title={title} withSearchBar={true} handleSearch={handleSearch} />
-			<div>{content}</div>
-			<CharaListSideComponent
-				currentChara={store?.currentChara!}
-				selectedImageRef={selectedImageRef}
-			/>
+			<div id={styles.charaListContainer}>
+				<section>{content}</section>
+				<CharaListSideComponent
+					currentChara={store?.currentChara!}
+					selectedImageRef={selectedImageRef}
+				/>
+			</div>
 		</>
 	);
 }
@@ -100,5 +102,4 @@ interface Props {
 	title: string;
 	students: Student[];
 	error: string | null;
-	charaListRef: RefObject<HTMLUListElement>;
 }

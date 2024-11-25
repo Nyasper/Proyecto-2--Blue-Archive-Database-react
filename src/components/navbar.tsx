@@ -15,10 +15,6 @@ export function Navbar() {
 			name: 'Categories',
 			path: '/characters/category/all',
 		},
-		{
-			name: 'About',
-			path: '/about',
-		},
 	];
 	const currentRoute = useLocation().pathname;
 

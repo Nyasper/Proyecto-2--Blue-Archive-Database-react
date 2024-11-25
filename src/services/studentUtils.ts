@@ -76,6 +76,8 @@ export const categoriesNoUrl: (keyof Student)[] = [
 	'pageImageProfileUrl',
 	'audioUrl',
 	'pageUrl',
+	'age',
+	'height',
 ];
 
 export type ExcludedCategoriesUrl = Exclude<
