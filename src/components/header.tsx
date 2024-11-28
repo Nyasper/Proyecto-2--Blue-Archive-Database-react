@@ -1,14 +1,7 @@
-import { type ChangeEvent, type RefObject } from 'react';
+import { type ChangeEvent } from 'react';
 import styles from '../styles/header.module.css';
 
-export function Header({
-	title,
-	withSearchBar = false,
-	handleSearch,
-}: // inputRef,
-// inputEvent,
-// TODO: ver para que sirve inputEvent
-Props) {
+export function Header({ title, withSearchBar = false, handleSearch }: Props) {
 	return withSearchBar ? (
 		<header id={styles.headerContainer}>
 			<h1 className={styles.title}>{title}</h1>

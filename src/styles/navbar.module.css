@@ -41,22 +41,21 @@
 	outline: 1px solid white;
 }
 
-/* @media (max-width: 768px) {
-	ul {
-		margin-top: 15px;
-		flex-direction: column;
-		min-width: max-content;
-		height: max-content;
-		min-width: max-content;
-		font-size: 1.3em;
+@media only screen and (max-width: 768px) {
+	#navBarUl {
+		height: 70px;
+	}
+
+	.navLi {
+		margin: 0;
+		padding: 0 10px;
 	}
 
 	#logoImg {
-		height: 150px;
+		background-color: rgb(63, 115, 182);
+		margin: 0;
 	}
-
-	#navBarContainer li {
-		padding: 5px 0;
+	#logoImgContainer {
+		margin-right: 20px;
 	}
-
-} */
+}

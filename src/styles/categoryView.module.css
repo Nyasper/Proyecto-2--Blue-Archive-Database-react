@@ -14,6 +14,10 @@
 	font-size: 1.6em;
 }
 
+a {
+	color: white;
+}
+
 #categoryUlList > li {
 	margin: 0 15px;
 }
@@ -46,20 +50,33 @@
 }
 
 @media (max-width: 768px) {
+	#categoryDivContainer {
+		font-size: 1em;
+		text-align: center;
+	}
+
 	#categoryUlList {
 		position: relative;
 		width: 100%;
-		left: -12px;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		flex-wrap: wrap;
 		margin: 0 auto;
+		margin-bottom: 30px;
 		padding: 0;
-		/* min-width: min-content; */
-	}
 
-	#categoryUlList img:hover {
-		filter: none;
-		scale: 1;
-		transition: none;
+		li {
+			font-size: 0.8em;
+			padding: 5px 0;
+			border: 1px solid white;
+			margin: 5px;
+			border-radius: 20px;
+			box-shadow: 0.5px 0.5px 1px black;
+		}
+
+		li:hover {
+			border-radius: none;
+			outline: none;
+			filter: none;
+		}
 	}
 }

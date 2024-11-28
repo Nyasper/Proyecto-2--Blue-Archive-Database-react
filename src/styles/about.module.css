@@ -17,28 +17,22 @@
 	}
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 	#aboutContainer {
 		width: 100%;
-		flex-flow: column-reverse wrap;
-		margin-top: 60px;
 		position: relative;
-		left: -15px;
-		text-align: center;
-		height: 100vh;
-		width: 100vw;
-	}
+		text-align: left;
 
-	#aboutContainer > div {
-		min-width: min-content;
-		font-size: 1.2em;
-		margin: 0 auto;
+		h1 {
+			font-size: 2.12em;
+			margin-bottom: 25px;
+		}
+
+		p {
+			font-size: 1.1em;
+		}
+		a {
+			font-size: 1em;
+		}
 	}
 }
-
-/* @media (max-width: 768px) {
-	#gameInfoContainer h1,
-	#gameInfoContainer p {
-		margin-top: 10px;
-	}
-} */

@@ -12,13 +12,13 @@ export function CharaListSideComponent({
 				<b className="bold">selected: {currentChara.name}</b>
 			</h2>
 			<Link to={currentChara.name} className={styles.animationSlide}>
+				<p>Click to view details</p>
 				<img
 					className={styles.selectedImage}
 					ref={selectedImageRef}
 					src={currentChara.url}
 				/>
 			</Link>
-			<p>Click to view details</p>
 		</div>
 	) : (
 		<div id={styles.selectedImageContainer}>

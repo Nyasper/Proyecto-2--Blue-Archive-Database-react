@@ -69,3 +69,20 @@ input {
 		transform: translateY(30px);
 	}
 }
+
+@media only screen and (max-width: 768px) {
+	h1 {
+		font-size: 1.4em;
+		margin: 5px 0;
+	}
+
+	p,
+	a {
+		text-align: center;
+		font-size: 0.8em;
+	}
+
+	.moreAbout {
+		margin-top: 5px;
+	}
+}

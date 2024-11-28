@@ -1,4 +1,4 @@
-import type { MediaType, Student } from '../models/student.model';
+import type { MediaType, Student, WeaponType } from '../models/student.model';
 
 //get all the keys that doesn't are undefined.
 export function getKeysWithoutNull(
@@ -44,15 +44,52 @@ export function getPropertyDataDistinct(
 	return [...new Set(students.map((s) => s[propName]))];
 }
 
-export const handleCategoryName = (
-	categoryName: string | number | Date | null
-): string => {
-	if (categoryName === 'combatClass') return 'combat class';
-	if (categoryName === 'weaponType') return 'weapon type';
-	if (categoryName === 'skinSet') return 'skin';
+export function handleCategoryName(categoryName: keyof Student): string {
+	if (categoryName === 'combatClass') return 'Combat class';
+	else if (categoryName === 'weaponType') return 'Weapon type';
+	else if (categoryName === 'skinSet') return 'Skin';
+	else if (categoryName === 'releaseDate') return 'Release date';
+	else if (categoryName === 'audioUrl') return 'Audio url';
+	else if (categoryName === 'charaName') return 'Character name';
+	else if (categoryName === 'pageUrl') return 'Page url';
 
 	return String(categoryName);
-};
+}
+
+export function handleCategoryValue(
+	categoryName: keyof Student,
+	categoryValue: string
+): string {
+	if (
+		categoryName === 'charaName' ||
+		categoryName === 'skinSet' ||
+		categoryName === 'role' ||
+		categoryName === 'voice'
+	) {
+		return categoryValue.replaceAll('_', ' ');
+	} else if (categoryName === 'weaponType') {
+		const weaponTypeMapping: Record<WeaponType, string> = {
+			HG: 'handgun',
+			SG: 'shotgun',
+			MG: 'machine gun',
+			AR: 'assault rifle',
+			SMG: 'submachine gun',
+			SR: 'sniper rifle',
+			RL: 'rocket launcher',
+			FT: 'flame thrower',
+			GL: 'grenade launcher',
+			RG: 'railgun',
+			MT: 'mortar',
+		};
+		return weaponTypeMapping[categoryValue as WeaponType] || categoryValue;
+	}
+
+	if (categoryName === 'releaseDate') {
+		return categoryValue.replaceAll('-', '/');
+	}
+
+	return categoryValue;
+}
 
 // categories to doesn't display on character info:
 const categoriesBlackList: (keyof Student)[] = [
@@ -66,7 +103,7 @@ const categoriesBlackList: (keyof Student)[] = [
 
 // categories without links
 export const categoriesNoUrl: (keyof Student)[] = [
-	'charaName', //TODO: nose si dejar o quitar
+	'charaName',
 	'lastName',
 	'birthday',
 	'hobbies',

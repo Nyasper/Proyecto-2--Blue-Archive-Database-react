@@ -42,7 +42,6 @@ export function useFetch<T>(url: string) {
 				setData(data);
 			} catch (e) {
 				if (e instanceof DOMException && e.name === 'AbortError') {
-					console.log('Fetch aborted');
 				} else {
 					setError(`Error on Getting Data: \n${(e as Error).message}`);
 					console.error(e);

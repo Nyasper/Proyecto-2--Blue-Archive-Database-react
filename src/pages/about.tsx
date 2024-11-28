@@ -3,7 +3,7 @@ import styles from '../styles/about.module.css';
 export default function About() {
 	return (
 		<div id={`${styles.aboutContainer}`}>
-			<h2 className="subtitle">About this Project</h2>
+			<h1>About this Project</h1>
 			<p>
 				<span>Blue Archive Database</span> is an app where users can access a
 				variety of data related to the popular mobile game{' '}

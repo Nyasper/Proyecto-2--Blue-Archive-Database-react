@@ -1,10 +1,16 @@
 import styles from '@/styles/categoryView.module.css';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useMemo } from 'react';
-import { categoriesNoUrl, handleCategoryName } from '../services/studentUtils';
 import { StoreContext } from '../stores/storeContext';
-import { getPropertyDataDistinct } from '../services/studentUtils';
-import type { ExcludedCategoriesUrl } from '../services/studentUtils';
+import {
+	getPropertyDataDistinct,
+	handleCategoryValue,
+} from '../services/studentUtils';
+import {
+	type ExcludedCategoriesUrl,
+	categoriesNoUrl,
+	handleCategoryName,
+} from '../services/studentUtils';
 
 export default function CategoryView() {
 	const navigate = useNavigate();
@@ -21,7 +27,7 @@ export default function CategoryView() {
 	}, [students, categoryName]);
 
 	// route param validation
-	const isSpecificCategory = allCategoriesKeys.includes(categoryName!);
+	const isSpecificCategory: boolean = allCategoriesKeys.includes(categoryName!);
 	const isInvalidParam =
 		!categoryName ||
 		allCategories.length === 0 ||
@@ -32,9 +38,6 @@ export default function CategoryView() {
 		if (isInvalidParam) {
 			navigate('/characters/category/all');
 		}
-		if (isSpecificCategory) {
-			console.log('Aca estamos en una valida');
-		}
 	}, [categoryName, allCategories, navigate]);
 
 	function renderlinkList() {
@@ -44,7 +47,9 @@ export default function CategoryView() {
 					<li key={index}>
 						{isSpecificCategory ? (
 							<Link to={`/characters/category/${categoryName}/${category}`}>
-								{handleCategoryName(category)}
+								{handleCategoryName(
+									handleCategoryValue(categoryName as any, String(category))
+								)}
 							</Link>
 						) : (
 							<Link to={`/characters/category/${category}`}>
@@ -59,19 +64,12 @@ export default function CategoryView() {
 
 	return (
 		<div id={styles.categoryDivContainer}>
-			<h2>Select a Category</h2>
+			{isSpecificCategory ? (
+				<h2>Select a value for: {categoryName}</h2>
+			) : (
+				<h2>View characters by:</h2>
+			)}
 			{renderlinkList()}
 		</div>
 	);
 }
-
-// <Header
-// 	title={
-// 		categoryName
-// 			? `Category: ${manageCategoryName(categoryName)}`
-// 			: 'Select a Category'
-// 	}
-// 	searchBar={true}
-// 	inputRef={searchRef}
-// 	inputEvent={() => searching(charaListRef, searchRef)}
-// />;

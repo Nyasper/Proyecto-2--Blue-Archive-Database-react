@@ -3,6 +3,10 @@ import { CharaList } from '../components/charaList';
 import { useContext, useEffect, useMemo } from 'react';
 import { StoreContext } from '../stores/storeContext';
 import type { Student } from '../models/student.model';
+import {
+	handleCategoryName,
+	handleCategoryValue,
+} from '../services/studentUtils';
 
 export function CategoryList() {
 	const { categoryName, categoryValue } = useParams<{
@@ -35,7 +39,10 @@ export function CategoryList() {
 		<CharaList
 			students={students}
 			error={null}
-			title={`${categoryName}: ${categoryValue}`}
+			title={`${handleCategoryName(categoryName!)}: ${handleCategoryValue(
+				categoryName as any,
+				categoryValue!
+			)}`}
 		/>
 	);
 }

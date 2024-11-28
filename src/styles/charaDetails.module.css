@@ -46,10 +46,8 @@
 table {
 	table-layout: fixed;
 	border-collapse: collapse;
-	/* background-color: #102041; */
 	border-radius: 10px;
 	border-spacing: 0;
-	/* width: 100%; */
 
 	text-align: center;
 	overflow: hidden;
@@ -70,14 +68,27 @@ button {
 @media (max-width: 768px) {
 	#charaViewContainer {
 		flex-direction: column;
-		height: 100%;
-		margin-top: 50px;
-	}
-
-	.charaFullImage {
-		object-fit: contain;
-		margin-right: 0;
 		width: 100%;
-		align-self: center;
+		max-width: none;
+		max-height: none;
+		height: max-content;
+
+		margin: 0;
+		padding: 0;
+		border: none;
+
+		.imgContainer {
+			padding: 0;
+			margin: 20px 0;
+			width: 100%;
+		}
+
+		.charaFullImage {
+			margin: 0;
+			padding: 0;
+			object-fit: contain;
+			max-width: 100%;
+			max-height: 600px;
+		}
 	}
 }

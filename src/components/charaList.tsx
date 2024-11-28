@@ -7,11 +7,14 @@ import { useEffect } from 'react';
 import { Header } from './header';
 import type { Student } from '../models/student.model';
 import { getStudentMedia } from '../services/studentUtils';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export function CharaList({ title, students, error }: Props) {
 	// Right Side Image Preview
 	const store = useContext(StoreContext);
 	const selectedImageRef = useRef<HTMLImageElement | null>(null);
+
+	const isMobile: boolean = useIsMobile();
 
 	const handleClick = (chara: Student) => {
 		if (!store) return;
@@ -78,6 +81,7 @@ export function CharaList({ title, students, error }: Props) {
 							charaName={chara.charaName}
 							school={chara.school}
 							clickEvent={() => handleClick(chara)}
+							withUrl={isMobile}
 						/>
 					))}
 			</ul>
