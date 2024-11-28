@@ -11,6 +11,7 @@ import {
 	categoriesNoUrl,
 	handleCategoryName,
 } from '../services/studentUtils';
+import type { Student } from '../models/student.model';
 
 export default function CategoryView() {
 	const navigate = useNavigate();
@@ -48,12 +49,15 @@ export default function CategoryView() {
 						{isSpecificCategory ? (
 							<Link to={`/characters/category/${categoryName}/${category}`}>
 								{handleCategoryName(
-									handleCategoryValue(categoryName as any, String(category))
+									handleCategoryValue(
+										categoryName as keyof Student,
+										String(category)
+									) as keyof Student
 								)}
 							</Link>
 						) : (
 							<Link to={`/characters/category/${category}`}>
-								{handleCategoryName(category)}
+								{handleCategoryName(category as keyof Student)}
 							</Link>
 						)}
 					</li>

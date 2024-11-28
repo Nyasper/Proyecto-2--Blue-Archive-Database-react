@@ -39,10 +39,9 @@ export function CategoryList() {
 		<CharaList
 			students={students}
 			error={null}
-			title={`${handleCategoryName(categoryName!)}: ${handleCategoryValue(
-				categoryName as any,
-				categoryValue!
-			)}`}
+			title={`${handleCategoryName(
+				categoryName as keyof Student
+			)}: ${handleCategoryValue(categoryName as any, categoryValue!)}`}
 		/>
 	);
 }
